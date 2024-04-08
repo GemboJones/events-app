@@ -1,4 +1,4 @@
-const Event = require("../models/dbTesting/event.model.js");
+const Event = require("../models/event.model.js");
 
 
 exports.getAllEvents = async (req, res) => {
