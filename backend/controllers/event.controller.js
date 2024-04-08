@@ -10,6 +10,16 @@ exports.getAllEvents = async (req, res) => {
   }
 };
 
+exports.getEvent = async (req, res) => {
+  try {
+    const { id } = req.params
+    const event = await Event.findById(id);
+    res.status(200).send(event);
+  } catch (error) {
+    res.status(500).send({ message: error.message });
+  }
+};
+
 exports.createEvent = async (req, res) => {
   try {
     const event = await Event.create(req.body);
