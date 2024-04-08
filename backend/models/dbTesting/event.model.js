@@ -27,6 +27,9 @@ const eventSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  attending: [
+    { type: mongoose.Schema.Types.ObjectId, ref: "User", required: false },
+  ],
   date: {
     type: Date,
     required: true,
