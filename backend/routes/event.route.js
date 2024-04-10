@@ -7,6 +7,6 @@ router.get("/", getAllEvents);
 router.get("/:id", getEvent);
 router.post("/", createEvent);
 router.patch("/:id", updateEvent);
-router.patch("/:id/attending", updateAttending);
+// router.patch("/:id/attending", updateAttending);
 
 module.exports = router;
