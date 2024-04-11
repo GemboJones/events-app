@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 require("dotenv").config();
 const mongoose = require("mongoose");
@@ -11,6 +12,7 @@ const userRouter = require("./routes/user.route.js")
 
 connectDB();
 
+app.use(cors());
 app.use(express.json());
 
 app.use("/api/events", eventRouter);
