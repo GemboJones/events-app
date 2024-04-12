@@ -2,7 +2,7 @@ const Event = require("../models/event.model.js");
 
 const getAllEvents = async (req, res) => {
   try {
-    const events = await Event.find({});
+    const events = await Event.find({}).populate("attending");
     res.status(200).send(events);
   } catch (error) {
     res.status(500).send({ message: error.message });
