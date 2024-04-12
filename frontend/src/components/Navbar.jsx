@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import styles from "../styles/Navbar.module.css";
+import closeIcon from "../assets/closeIcon.png"
+import menuIcon from "../assets/menuIcon.png"
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,13 +13,7 @@ export const Navbar = () => {
       <div className={styles.menu}>
         <img
           className={styles.menuBtn}
-          src={
-            isMenuOpen ? (
-              <img src="../assets/react.svg" />
-            ) : (
-              <img src="../assets/react.svg" />
-            )
-          }
+          src={isMenuOpen ? closeIcon : menuIcon }
           alt="menu-button"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         />
