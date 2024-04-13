@@ -1,0 +1,36 @@
+.container {
+   margin: 2% 10%;
+}
+
+a {
+   text-decoration: none;
+}
+
+.events {
+  padding: 0rem;
+  display: grid;
+  column-gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+}
+
+.eventCard {
+  list-style-type: none;
+  border: 3px solid;
+  border-radius: 10px;
+  border-color: rgb(225, 226, 230);
+  margin: 1.5rem 0;
+}
+
+.eventCard:hover {
+  background-color: #e4ecff;
+  border: 3px solid;
+  border-color: #cedcff;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.08), 0 12px 30px 0 rgba(0, 0, 0, 0.08);
+}
+
+.eventCard__image {
+  width: 100%;
+  height: auto;
+  max-height: 230px;
+  border-radius: 5px 5px 0px 0px;
+}
