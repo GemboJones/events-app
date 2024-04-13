@@ -9,11 +9,13 @@ export const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <Link className={styles.title}>Events</Link>
+      <Link to="/" className={styles.title}>
+        Events
+      </Link>
       <div className={styles.menu}>
         <img
           className={styles.menuBtn}
-          src={isMenuOpen ? closeIcon : menuIcon }
+          src={isMenuOpen ? closeIcon : menuIcon}
           alt="menu-button"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         />
