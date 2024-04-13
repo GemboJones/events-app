@@ -1,0 +1,15 @@
+.container {
+   margin: 4% 15%;
+}
+
+/* .singleEventPage {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+} */
+
+.eventImage {
+   border-radius: 10px;
+   width: 100%;
+   height: 250px;
+}
