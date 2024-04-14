@@ -1,46 +1,32 @@
 import React from "react";
-import { useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import UserContext from "../context/userContext";
 import styles from "../styles/Login.module.css";
-// import { getUser } from "../api";
+import { userLogin } from "../api";
 
 export const Login = () => {
+  const navigate = useNavigate();
+  const { user, setUser } = useContext(UserContext);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const [user, setUser] = useState("");
+  const [error, setError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const findUser = { name, email, password };
-    console.log(findUser);
+    const formData = { email };
 
-    getUser(findUser).then((userData) => {
-      // setUser(userData);
+    userLogin(formData).then((userData) => {
+      if (!userData) {
+        console.log("no data");
+        setError(true)
+      } else {
+        console.log("data found");
+        setUser(userData);
+        navigate("/");
+      }
     });
-    // setTitle("")
-    // setDescription("")
-    // setLocation("")
-    // setTopic("")
-    // setDate("")
-    // const response = await fetch('/api/addNewEvents', {
-    //   method: 'POST',
-    //   body: JSON.stringify(addNewEvent),
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   }
-    // })
-    // const json = await response.json()
-    // if (!response.ok) {
-    //   setError(json.error)
-    // }
-    // if (response.ok) {
-    //   setError(null)
-    //   setTitle('')
-    //   setDescription('')
-    //   setLocation('')
-    //   dispatch({type: 'CREATE_WORKOUT', payload: json})
-    // }
   };
 
   return (
@@ -63,7 +49,8 @@ export const Login = () => {
         />
 
         <button>Log in</button>
-        {/* {error && <div className="error">{error}</div>} */}
+        {error && <div className={styles.error}>Error logging in</div>}
+        
       </form>
 
       <br />
@@ -72,8 +59,6 @@ export const Login = () => {
       <Link to={"/signup"}>
         <p className={styles.underlined}>Sign up</p>
       </Link>
-
-      {user && <Navigate to={"/"} />}
     </div>
   );
 };

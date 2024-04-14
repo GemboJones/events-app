@@ -25,3 +25,9 @@ export const createNewUser = (addNewUser) => {
     return response.data;
   });
 };
+
+export const userLogin = (formData) => {
+  return axios.post(`${BASE_URL}/login`, formData).then((response) => {
+    return response.data;
+  });
+};

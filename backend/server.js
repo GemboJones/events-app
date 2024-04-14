@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 3088;
 
 const eventRouter = require("./routes/event.route.js")
 const userRouter = require("./routes/user.route.js")
+const loginRouter = require("./routes/login.route.js")
 
 
 connectDB();
@@ -17,6 +18,7 @@ app.use(express.json());
 
 app.use("/api/events", eventRouter);
 app.use("/api/users", userRouter);
+app.use("/api/login", loginRouter);
 
 
 mongoose.connection.once("open", () => {

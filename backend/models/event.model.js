@@ -26,6 +26,7 @@ const eventSchema = new mongoose.Schema({
   price: {
     type: String,
     required: true,
+    default: "free",
   },
   attending: [
     { type: mongoose.Schema.Types.ObjectId, ref: "User", required: false },
