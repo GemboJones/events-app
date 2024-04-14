@@ -1,11 +1,13 @@
 .container {
-   padding: 4% 15%;
+  padding: 4% 15%;
 }
 
-label, input {
+label,
+input {
   display: block;
 }
-input, select {
+input,
+select {
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -18,11 +20,16 @@ button {
   background-color: dodgerblue;
   font-family: inherit;
   font-weight: 500;
+  font-size: 16px;
   border: 0;
   color: #fff;
   padding: 10px;
   border-radius: 4px;
   cursor: pointer;
+}
+.underlined {
+  text-decoration: underline;
+  font-weight: 700;
 }
 div.error {
   padding: 10px;
