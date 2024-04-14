@@ -51,7 +51,7 @@ export const Events = () => {
                     <p>
                       <strong>Price:</strong> {price}
                     </p>
-                    <p>
+                    {/* <p>
                       <strong>Tickets sold:</strong> {attending.length}
                     </p>
                     {attending.length !== 0 && (
@@ -61,7 +61,7 @@ export const Events = () => {
                     )}
                     {attending.map(({ _id, name }) => {
                       return <p key={_id}>{name}</p>;
-                    })}
+                    })} */}
                   </li>
                 </Link>
               );

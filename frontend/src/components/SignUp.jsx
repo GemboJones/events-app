@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import styles from "../styles/Login.module.css";
 import { createNewUser } from "../api";
 
@@ -64,14 +64,14 @@ export const SignUp = () => {
 
         <label>Email:</label>
         <input
-          type="text"
+          type="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
         />
 
         <label>Password:</label>
         <input
-          type="text"
+          type="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
@@ -91,6 +91,14 @@ export const SignUp = () => {
         <button>Sign up</button>
         {/* {error && <div className="error">{error}</div>} */}
       </form>
+
+      <br />
+
+      <p>Already have an account?</p>
+      <Link to={"/login"}>
+        <p className={styles.underlined}>Log in</p>
+      </Link>
+
       {newUser && <Navigate to={"/"} />}
     </div>
   );

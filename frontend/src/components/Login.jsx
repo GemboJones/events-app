@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import styles from "../styles/Login.module.css";
 // import { getUser } from "../api";
 
@@ -10,15 +10,14 @@ export const Login = () => {
 
   const [user, setUser] = useState("");
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const findUser = { name, email, password };
     console.log(findUser);
-    
+
     getUser(findUser).then((userData) => {
       // setUser(userData);
-    })
+    });
     // setTitle("")
     // setDescription("")
     // setLocation("")
@@ -51,14 +50,14 @@ export const Login = () => {
 
         <label>Email:</label>
         <input
-          type="text"
+          type="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
         />
 
         <label>Password:</label>
         <input
-          type="text"
+          type="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
@@ -66,6 +65,14 @@ export const Login = () => {
         <button>Log in</button>
         {/* {error && <div className="error">{error}</div>} */}
       </form>
+
+      <br />
+
+      <p>New user?</p>
+      <Link to={"/signup"}>
+        <p className={styles.underlined}>Sign up</p>
+      </Link>
+
       {user && <Navigate to={"/"} />}
     </div>
   );

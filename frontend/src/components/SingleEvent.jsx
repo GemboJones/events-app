@@ -53,6 +53,7 @@ export const SingleEvent = () => {
           );
         })}
       </ul>
+      <button>Get ticket</button>
     </div>
   );
 };
