@@ -27,6 +27,9 @@ export const Navbar = () => {
             <NavLink to="/events">Events</NavLink>
           </li>
           <li>
+            <NavLink to="/create">Create Event</NavLink>
+          </li>
+          <li>
             <NavLink to="/login">Login</NavLink>
           </li>
           <li>
