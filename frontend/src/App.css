@@ -5,6 +5,9 @@
   text-align: center;
 } */
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
 html, body {
 
 padding: 0;
@@ -12,6 +15,20 @@ padding: 0;
 margin: 0;
 
 }
+
+body {
+  background: #f1f1f1;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: rgb(74, 74, 74);
+}
+
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
 /* 
 .logo {
   height: 6em;

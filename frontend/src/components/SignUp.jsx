@@ -2,23 +2,29 @@ import React from "react";
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
 import styles from "../styles/Login.module.css";
-// import { getUser } from "../api";
+import { createNewUser } from "../api";
 
-export const Login = () => {
+export const SignUp = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [role, setRole] = useState("");
 
-  const [user, setUser] = useState("");
-
+  const [newUser, setNewUser] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    const findUser = { name, email, password };
-    console.log(findUser);
     
-    getUser(findUser).then((userData) => {
-      // setUser(userData);
-    })
+    e.preventDefault();
+    const addNewUser = { name, email, password, role };
+
+    createNewUser(addNewUser).then((userAdded) => {
+      setNewUser(userAdded);
+          console.log(userAdded);
+    });
+
+
+
+
     // setTitle("")
     // setDescription("")
     // setLocation("")
@@ -47,7 +53,14 @@ export const Login = () => {
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit}>
-        <h2>Log In</h2>
+        <h2>Create an account</h2>
+
+        <label>Name:</label>
+        <input
+          type="text"
+          onChange={(e) => setName(e.target.value)}
+          value={name}
+        />
 
         <label>Email:</label>
         <input
@@ -63,10 +76,22 @@ export const Login = () => {
           value={password}
         />
 
-        <button>Log in</button>
+        <label>Role:</label>
+        <select name="role" onChange={(e) => setRole(e.target.value)}>
+          <option value="select">Select role</option>
+          <option value="member">Member</option>
+          <option value="admin">Admin</option>
+        </select>
+        {/* <input
+          type="dropdown"
+          onChange={(e) => setRole(e.target.value)}
+          value={role}
+        /> */}
+
+        <button>Sign up</button>
         {/* {error && <div className="error">{error}</div>} */}
       </form>
-      {user && <Navigate to={"/"} />}
+      {newUser && <Navigate to={"/"} />}
     </div>
   );
 };

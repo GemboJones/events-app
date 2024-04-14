@@ -8,7 +8,6 @@ export const Events = () => {
 
   useEffect(() => {
     getAllEvents().then((eventsData) => {
-      console.log(eventsData);
       setEvents(eventsData);
     });
   }, []);
