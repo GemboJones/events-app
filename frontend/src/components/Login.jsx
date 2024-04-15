@@ -11,23 +11,33 @@ export const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(false);
+  const [dbError, setDbError] = useState(false);
+  const [inputError, setInputError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = { email };
 
-    userLogin(formData).then((userData) => {
-      if (!userData) {
-        console.log("no data");
-        setError(true)
-      } else {
-        console.log("data found");
-        setUser(userData);
-        navigate("/");
-      }
-    });
+        if (!email || !password) {
+          setInputError(true);
+          setDbError(false);
+        } else {
+          userLogin(formData).then((userData) => {
+            setInputError(false);
+            if (!userData) {
+              console.log("no data");
+              setDbError(true);
+            } else {
+              console.log("data found");
+              setUser(userData);
+              setDbError(false);
+              navigate("/");
+            }
+          });
+        }
   };
+
+  
 
   return (
     <div className={styles.container}>
@@ -49,8 +59,11 @@ export const Login = () => {
         />
 
         <button>Log in</button>
-        {error && <div className={styles.error}>Error logging in</div>}
         
+        {dbError && <div className={styles.error}>Error logging in</div>}
+        {inputError && (
+          <div className={styles.error}>Please fill in all fields</div>
+        )}
       </form>
 
       <br />
