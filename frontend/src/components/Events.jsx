@@ -17,8 +17,7 @@ export const Events = () => {
       <div className={styles.container}>
         <h1>Explore events</h1>
         <h3>
-          Discover social events, fun days out and webinars to boost your
-          career.
+          Discover social events, webinars to boost your career and fun days out.
         </h3>
         <ul className={styles.events}>
           {events.map(

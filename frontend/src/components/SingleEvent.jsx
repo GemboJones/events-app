@@ -13,7 +13,6 @@ export const SingleEvent = () => {
     getEvent(_id).then((eventData) => {
       setSingleEvent(eventData);
        setIsLoading(false);
-      console.log(eventData);
     });
   }, [_id]);
 

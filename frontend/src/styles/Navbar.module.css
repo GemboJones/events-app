@@ -30,7 +30,7 @@
 }
 
 .title:hover {
-  color: blue;
+  color: dodgerblue;
 }
 
 .menuBtn {
@@ -43,6 +43,7 @@
 
 .menuItems {
   display: flex;
+  align-items: center;
   gap: 46px;
   list-style: none;
 }
@@ -56,8 +57,20 @@
 }
 
 .menuItems a:hover {
-  color: blue;
+color: dodgerblue;
 }
+
+/* button {
+  background-color: dodgerblue;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+} */
 
 @media screen and (max-width: 830px) {
   .navbar {

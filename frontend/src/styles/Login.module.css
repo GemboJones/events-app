@@ -32,13 +32,14 @@ button {
   font-weight: 700;
 }
 div.error {
+  font-size: 14px;
   padding: 10px;
-  background: #ffefef;
-  border: 1px solid var(--error);
-  color: var(--error);
+  background: #fee7e7;
+  border: 1px solid rgb(215, 32, 32);
+  color: rgb(215, 32, 32);
   border-radius: 4px;
-  margin: 20px 0;
+  margin-top: 20px;
 }
-input.error {
-  border: 1px solid var(--error);
-}
+/* input.error {
+  border: 1px solid red;
+} */
