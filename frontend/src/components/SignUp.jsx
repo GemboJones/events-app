@@ -1,53 +1,45 @@
 import React from "react";
-import { useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import UserContext from "../context/userContext";
 import styles from "../styles/Login.module.css";
 import { createNewUser } from "../api";
 
 export const SignUp = () => {
+  const navigate = useNavigate();
+  const { user, setUser } = useContext(UserContext);
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
+  const [error, setError] = useState(false);
 
-  const [newUser, setNewUser] = useState("");
+  const [dbError, setDbError] = useState(false);
+  const [inputError, setInputError] = useState(false);
 
   const handleSubmit = (e) => {
-    
     e.preventDefault();
     const addNewUser = { name, email, password, role };
 
-    createNewUser(addNewUser).then((userAdded) => {
-      setNewUser(userAdded);
-          console.log(userAdded);
-    });
-
-
-
-
-    // setTitle("")
-    // setDescription("")
-    // setLocation("")
-    // setTopic("")
-    // setDate("")
-    // const response = await fetch('/api/addNewEvents', {
-    //   method: 'POST',
-    //   body: JSON.stringify(addNewEvent),
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   }
-    // })
-    // const json = await response.json()
-    // if (!response.ok) {
-    //   setError(json.error)
-    // }
-    // if (response.ok) {
-    //   setError(null)
-    //   setTitle('')
-    //   setDescription('')
-    //   setLocation('')
-    //   dispatch({type: 'CREATE_WORKOUT', payload: json})
-    // }
+    if (!name || !email || !role) {
+      setInputError(true);
+      setDbError(false);
+    } else {
+      createNewUser(addNewUser).then((userAdded) => {
+        setInputError(false);
+        if (!userAdded) {
+          // need to check for existing user credentials in BE
+          console.log("sign up unsuccessful");
+          setDbError(true);
+        } else {
+          console.log("sign up successful");
+          setUser(userAdded);
+          setDbError(false);
+          navigate("/");
+        }
+      });
+    }
   };
 
   return (
@@ -89,7 +81,11 @@ export const SignUp = () => {
         /> */}
 
         <button>Sign up</button>
-        {/* {error && <div className="error">{error}</div>} */}
+  
+        {dbError && <div className={styles.error}>Error signing up</div>}
+        {inputError && (
+          <div className={styles.error}>Please fill in all fields</div>
+        )}
       </form>
 
       <br />
@@ -98,8 +94,6 @@ export const SignUp = () => {
       <Link to={"/login"}>
         <p className={styles.underlined}>Log in</p>
       </Link>
-
-      {newUser && <Navigate to={"/"} />}
     </div>
   );
 };
