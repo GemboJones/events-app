@@ -31,3 +31,9 @@ export const userLogin = (formData) => {
     return response.data;
   });
 };
+
+export const updateAttending = (_id, user) => {
+  return axios.patch(`${BASE_URL}/events/${_id}`, user).then((response) => {
+    return response.data;
+  });
+};

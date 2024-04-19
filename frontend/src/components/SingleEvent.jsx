@@ -1,18 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import UserContext from "../context/userContext";
 import { useParams } from "react-router-dom";
 import { getEvent } from "../api";
 import styles from "../styles/SingleEvent.module.css";
+import { GetTicketBtn } from "./GetTicketBtn";
 
 export const SingleEvent = () => {
+  const { user } = useContext(UserContext);
+
   const [singleEvent, setSingleEvent] = useState([]);
+  const [attending, setAttending] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isUserAttending, setIsUserAttending] = useState(false);
   const { _id } = useParams();
 
   useEffect(() => {
     setIsLoading(true);
     getEvent(_id).then((eventData) => {
       setSingleEvent(eventData);
-       setIsLoading(false);
+      setAttending(eventData.attending);
+      eventData.attending.map((attendee) => {
+        if (attendee.email === user.email) {
+          setIsUserAttending(true);
+        }
+      });
+      setIsLoading(false);
     });
   }, [_id]);
 
@@ -24,7 +36,10 @@ export const SingleEvent = () => {
       <p>{singleEvent.topic}</p>
       <h1>{singleEvent.title}</h1>
       <p>
-        <strong>Date:</strong> {singleEvent.date}
+        <strong>Starts:</strong> {singleEvent.startDate}
+      </p>
+      <p>
+        <strong>Ends:</strong> {singleEvent.endDate}
       </p>
       <p>
         <strong>Description:</strong> {singleEvent.description}
@@ -36,23 +51,38 @@ export const SingleEvent = () => {
         <strong>Price:</strong> {singleEvent.price}
       </p>
       <p>
-        <strong>Tickets sold:</strong> {singleEvent.attending.length}
+        <strong>Tickets sold:</strong> {attending.length}
       </p>
-      {singleEvent.attending.length !== 0 && (
+      {user && attending.length !== 0 && (
         <p>
           <strong>Who's going:</strong>
         </p>
       )}
       <ul>
-        {singleEvent.attending.map(({ _id, name }) => {
-          return (
-            <li key={_id}>
-              <p>{name}</p>
-            </li>
-          );
-        })}
+        {user &&
+          attending.map(({ _id, name, email }) => {
+            return (
+              <li key={_id}>
+                {email === user.email ? (
+                  <p>
+                    {name} <strong>(me!)</strong>
+                  </p>
+                ) : (
+                  <p>{name}</p>
+                )}
+              </li>
+            );
+          })}
       </ul>
-      <button>Get ticket</button>
+
+      {user && !isUserAttending && (
+        <GetTicketBtn
+          attending={attending}
+          setAttending={setAttending}
+          _id={_id}
+        />
+      )}
+
     </div>
   );
 };
