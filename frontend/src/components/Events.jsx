@@ -25,7 +25,7 @@ export const Events = () => {
               _id,
               title,
               topic,
-              date,
+              startDate,
               description,
               location,
               price,
@@ -42,7 +42,7 @@ export const Events = () => {
                     />
                     <h2>{title} </h2>
                     <p>
-                      <strong>Date:</strong> {date}
+                      <strong>Date:</strong> {startDate}
                     </p>
                     <p>
                       <strong>Location:</strong> {location}
