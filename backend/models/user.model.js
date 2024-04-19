@@ -16,11 +16,10 @@ const userSchema = new mongoose.Schema({
   role: {
     type: String,
     required: true,
+    default: "member",
   },
   myEvents: [
-    { type: mongoose.Schema.Types.ObjectId, 
-      ref: "Event", 
-      required: false },
+    { type: mongoose.Schema.Types.ObjectId, ref: "Event", required: false },
   ],
   created_at: {
     type: Date,
