@@ -22,7 +22,7 @@ export const SignUp = () => {
     e.preventDefault();
     const addNewUser = { name, email, password, role };
 
-    if (!name || !email || !role) {
+    if (!name || !email || !password || !role) {
       setInputError(true);
       setDbError(false);
     } else {
@@ -70,15 +70,10 @@ export const SignUp = () => {
 
         <label>Role:</label>
         <select name="role" onChange={(e) => setRole(e.target.value)}>
-          <option value="select">Select role</option>
+          <option value="">Select role</option>
           <option value="member">Member</option>
           <option value="admin">Admin</option>
         </select>
-        {/* <input
-          type="dropdown"
-          onChange={(e) => setRole(e.target.value)}
-          value={role}
-        /> */}
 
         <button>Sign up</button>
   
