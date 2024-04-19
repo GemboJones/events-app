@@ -45,7 +45,7 @@ const updateEvent = async (req, res) => {
       return res.status(404).send({ message: "Event not found" });
     }
     }
-    const updatedEvent = await Event.findById(id);
+    const updatedEvent = await Event.findById(id).populate("attending");
     res.status(200).send(updatedEvent);
   } catch (error) {
     res.status(500).send({ message: error.message });
