@@ -9,14 +9,16 @@ export const CreateEvent = () => {
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
   const [topic, setTopic] = useState("");
-  const [date, setDate] = useState("");
+  // const [date, setDate] = useState("");
+  const [startDate, setStartDate] = useState("")
+  const [endDate, setEndDate] = useState("");
   
   const [newEventId, setNewEventId] = useState(null);
   const [error, setError] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const addNewEvent = { title, description, location, topic, date };
+    const addNewEvent = { title, description, location, topic, startDate, endDate };
     createNewEvent(addNewEvent).then((eventAdded) => {
       setNewEventId(eventAdded._id);
     });
@@ -78,14 +80,28 @@ export const CreateEvent = () => {
           value={topic}
         />
 
-        <label>Event Date:</label>
+        {/* <label>Event Date:</label>
         <input
-          type="text"
+          type="datetime-local"
           onChange={(e) => setDate(e.target.value)}
           value={date}
+        /> */}
+
+        <label>Start Date:</label>
+        <input
+          type="datetime-local"
+          onChange={(e) => setStartDate(e.target.value)}
+          value={startDate}
         />
 
-        <button>Create Event</button>
+        <label>End Date:</label>
+        <input
+          type="datetime-local"
+          onChange={(e) => setEndDate(e.target.value)}
+          value={endDate}
+        />
+
+        <button type="submit">Create Event</button>
         {/* {error && <div className="error">{error}</div>} */}
       </form>
       {newEventId && <Navigate to={`/events/${newEventId}`} />}
