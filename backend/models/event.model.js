@@ -31,9 +31,15 @@ const eventSchema = new mongoose.Schema({
   attending: [
     { type: mongoose.Schema.Types.ObjectId, ref: "User", required: false },
   ],
-  date: {
+  startDate: {
     type: Date,
     required: true,
+    default: "2024-06-11T12:00:00.000+00:00",
+  },
+  endDate: {
+    type: Date,
+    required: true,
+    default: "2024-06-11T14:00:00.000+00:00",
   },
 });
 
