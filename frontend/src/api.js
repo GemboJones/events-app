@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:3088/api";
+const BASE_URL = "https://events-app-api-nlkr.onrender.com/api";
 
 export const getAllEvents = () => {
    return axios.get(`${BASE_URL}/events`).then((response) => {
