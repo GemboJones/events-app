@@ -7,7 +7,7 @@ const Event = require("../models/event.model.js");
 const oAuth2Client = new google.auth.OAuth2(
   process.env.CLIENT_ID,
   process.env.CLIENT_SECRET,
-  "https://dreamy-concha-20d2a1.netlify.app"
+  "https://eventfree-events.netlify.app"
 );
 
 // const oAuth2Client = new OAuth2Client(
@@ -63,7 +63,8 @@ exports.getToken = async (req, res) => {
     });
 
     console.log(response.data);
-    res.status(200).send("event added to calendar");
+
+    res.status(200).send(response.data, "event added to calendar");
   } catch (error) {
     console.log(error);
     res.status(500).send({ message: error.message });
