@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://events-app-api-nlkr.onrender.com/api";
+const BASE_URL = "http://localhost:3088/api";
 
 export const getAllEvents = () => {
    return axios.get(`${BASE_URL}/events`).then((response) => {
@@ -34,6 +34,12 @@ export const userLogin = (formData) => {
 
 export const updateAttending = (_id, user) => {
   return axios.patch(`${BASE_URL}/events/${_id}`, user).then((response) => {
+    return response.data;
+  });
+};
+
+export const extractTokens = (_id, code) => {
+  return axios.post(`${BASE_URL}/auth/${_id}`, code).then((response) => {
     return response.data;
   });
 };

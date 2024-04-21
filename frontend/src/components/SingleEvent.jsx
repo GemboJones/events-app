@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getEvent } from "../api";
 import styles from "../styles/SingleEvent.module.css";
 import { GetTicketBtn } from "./GetTicketBtn";
+import { GoogleCal } from "./GoogleCal";
 
 export const SingleEvent = () => {
   const { user } = useContext(UserContext);
@@ -12,6 +13,7 @@ export const SingleEvent = () => {
   const [attending, setAttending] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isUserAttending, setIsUserAttending] = useState(false);
+  const [clickedTicketBtn, setClickedTicketBtn] = useState(false);
   const { _id } = useParams();
 
   useEffect(() => {
@@ -79,10 +81,16 @@ export const SingleEvent = () => {
         <GetTicketBtn
           attending={attending}
           setAttending={setAttending}
+          setClickedTicketBtn={setClickedTicketBtn}
+          clickedTicketBtn={clickedTicketBtn}
+          setIsUserAttending={setIsUserAttending}
           _id={_id}
         />
       )}
 
+      {user && isUserAttending && (
+        <GoogleCal _id={_id} clickedTicketBtn={clickedTicketBtn} />
+      )}
     </div>
   );
 };
