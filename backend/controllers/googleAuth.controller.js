@@ -7,7 +7,7 @@ const Event = require("../models/event.model.js");
 const oAuth2Client = new google.auth.OAuth2(
   process.env.CLIENT_ID,
   process.env.CLIENT_SECRET,
-  "http://localhost:5173"
+  "https://dreamy-concha-20d2a1.netlify.app"
 );
 
 // const oAuth2Client = new OAuth2Client(
