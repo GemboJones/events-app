@@ -64,8 +64,8 @@ exports.getToken = async (req, res) => {
 
     console.log(response.data);
 
-    res.status(200).send("event added to calendar");
-
+    res.status(200).send(response.data);
+    
   } catch (error) {
     console.log(error);
     res.status(500).send({ message: error.message });
