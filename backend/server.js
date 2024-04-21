@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 3088;
 const eventRouter = require("./routes/event.route.js")
 const userRouter = require("./routes/user.route.js")
 const loginRouter = require("./routes/login.route.js")
+const googleAuthRouter = require("./routes/googleAuth.route.js")
 
 
 connectDB();
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use("/api/events", eventRouter);
 app.use("/api/users", userRouter);
 app.use("/api/login", loginRouter);
+app.use("/api/auth", googleAuthRouter);
 
 
 mongoose.connection.once("open", () => {
