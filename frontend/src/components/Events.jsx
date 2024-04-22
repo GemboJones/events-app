@@ -5,19 +5,34 @@ import styles from "../styles/Events.module.css";
 
 export const Events = () => {
   const [events, setEvents] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     getAllEvents().then((eventsData) => {
       setEvents(eventsData);
     });
+    setIsLoading(false);
   }, []);
+
+  if (isLoading) return <p>Loading...</p>;
+
+  const dateOptions = {
+    day: "numeric",
+    month: "long",
+    weekday: "short",
+    hour: "numeric",
+    minute: "numeric",
+    // timeZoneName: "short",
+    timeZone: "Europe/London",
+  };
 
   return (
     <>
       <div className={styles.container}>
-        <h1>Explore events</h1>
+        <h2>Explore events</h2>
         <h3>
-          Discover social events, webinars to boost your career and fun days out.
+          At EventFree you can enjoy great events without the cost. Discover FREE social events, webinars to boost your career and fun days out.
         </h3>
         <ul className={styles.events}>
           {events.map(
@@ -40,17 +55,22 @@ export const Events = () => {
                       alt=""
                       className={styles.eventCard__image}
                     />
-                    <h2>{title} </h2>
-                    <p>
-                      <strong>Date:</strong> {startDate}
-                    </p>
-                    <p>
-                      <strong>Location:</strong> {location}
-                    </p>
-                    <p>
-                      <strong>Price:</strong> {price}
-                    </p>
-                    {/* <p>
+                    <div className={styles.eventCard__text}>
+                      <p>
+                        <strong>{topic}</strong>
+                      </p>
+                      <h2>{title} </h2>
+                      <p>
+                        {Intl.DateTimeFormat("en-GB", dateOptions).format(
+                          Date.parse(startDate)
+                        )}
+                      </p>
+                      <p>📍 {location}</p>
+                      {/* <p>
+                        🛒 {price}
+                      </p> */}
+
+                      {/* <p>
                       <strong>Tickets sold:</strong> {attending.length}
                     </p>
                     {attending.length !== 0 && (
@@ -61,6 +81,7 @@ export const Events = () => {
                     {attending.map(({ _id, name }) => {
                       return <p key={_id}>{name}</p>;
                     })} */}
+                    </div>
                   </li>
                 </Link>
               );

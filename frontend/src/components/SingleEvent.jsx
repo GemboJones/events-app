@@ -32,29 +32,67 @@ export const SingleEvent = () => {
 
   if (isLoading) return <p>Loading...</p>;
 
+  const dateOptions = {
+    day: "numeric",
+    month: "long",
+    weekday: "long",
+    // hour: "numeric",
+    // minute: "numeric",
+    // timeZoneName: "short",
+    timeZone: "Europe/London",
+  };
+
+  const TimeOptions = {
+    hour: "numeric",
+    minute: "numeric",
+  };
+
   return (
     <div className={styles.container}>
       <img className={styles.eventImage} src={singleEvent.image} alt="" />
-      <p>{singleEvent.topic}</p>
+      <h4>{singleEvent.topic}</h4>
       <h1>{singleEvent.title}</h1>
       <p>
-        <strong>Starts:</strong> {singleEvent.startDate}
+        <strong>Date</strong> <br />
+        📅{" "}
+        {Intl.DateTimeFormat("en-GB", dateOptions).format(
+          Date.parse(singleEvent.startDate)
+        )}
       </p>
       <p>
-        <strong>Ends:</strong> {singleEvent.endDate}
+        <strong>Time</strong> <br />
+        🕑{" "}
+        {Intl.DateTimeFormat("en-GB", TimeOptions).format(
+          Date.parse(singleEvent.startDate)
+        )}{" "}
+        -{" "}
+        {Intl.DateTimeFormat("en-GB", TimeOptions).format(
+          Date.parse(singleEvent.endDate)
+        )}
+      </p>
+      {/* <p>
+        <strong>Starts:</strong>{" "}
+        {Intl.DateTimeFormat("en-GB", dateOptions).format(
+          Date.parse(singleEvent.startDate)
+        )}
       </p>
       <p>
-        <strong>Description:</strong> {singleEvent.description}
+        <strong>Ends:</strong>{" "}
+        {Intl.DateTimeFormat("en-GB", dateOptions).format(
+          Date.parse(singleEvent.endDate)
+        )}
+      </p> */}
+      <p>
+        <strong>Location</strong> <br />
+        📍 {singleEvent.location}
       </p>
       <p>
-        <strong>Location:</strong> {singleEvent.location}
+        <strong>About this event</strong> <br />
+        {singleEvent.description}
       </p>
-      <p>
-        <strong>Price:</strong> {singleEvent.price}
-      </p>
-      <p>
+      {/* <p>
         <strong>Tickets sold:</strong> {attending.length}
-      </p>
+      </p> */}
       {user && attending.length !== 0 && (
         <p>
           <strong>Who's going:</strong>
@@ -67,16 +105,19 @@ export const SingleEvent = () => {
               <li key={_id}>
                 {email === user.email ? (
                   <p>
-                    {name} <strong>(me!)</strong>
+                    👤 {name} <strong>(me!)</strong>
                   </p>
                 ) : (
-                  <p>{name}</p>
+                  <p>👤 {name}</p>
                 )}
               </li>
             );
           })}
       </ul>
-
+      <p>
+        <strong>Price</strong> <br />
+        🛒 {singleEvent.price}
+      </p>
       {user && !isUserAttending && (
         <GetTicketBtn
           attending={attending}
