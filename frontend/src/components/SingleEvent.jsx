@@ -28,7 +28,7 @@ export const SingleEvent = () => {
       });
       setIsLoading(false);
     });
-  }, []);
+  }, [_id]);
 
   if (isLoading) return <p>Loading...</p>;
 
