@@ -2,8 +2,8 @@ const Event = require("../models/event.model.js");
 
 const getAllEvents = async (req, res) => {
   try {
-    const events = await Event.find({}).populate("attending");
-    // console.log(events, "<events");
+    const events = await Event.find({}).populate("attending").sort({startDate:1});
+   
     res.status(200).send(events);
   } catch (error) {
     res.status(500).send({ message: error.message });
@@ -14,7 +14,6 @@ const getEvent = async (req, res) => {
   try {
     const { id } = req.params;
     const event = await Event.findById(id).populate("attending");
-    // console.log(event);
     res.status(200).send(event);
   } catch (error) {
     res.status(500).send({ message: error.message });
