@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import UserContext from "../context/userContext";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { getEvent } from "../api";
 import styles from "../styles/SingleEvent.module.css";
 import { GetTicketBtn } from "./GetTicketBtn";
@@ -36,9 +36,6 @@ export const SingleEvent = () => {
     day: "numeric",
     month: "long",
     weekday: "long",
-    // hour: "numeric",
-    // minute: "numeric",
-    // timeZoneName: "short",
     timeZone: "Europe/London",
   };
 
@@ -50,17 +47,13 @@ export const SingleEvent = () => {
   return (
     <div className={styles.container}>
       <div className={styles.eventImage__container}>
-        <img
-          className={styles.eventImage}
-          src={singleEvent.image}
-          alt=""
-        />
+        <img className={styles.eventImage} src={singleEvent.image} alt="" />
       </div>
       <h4 className={styles.topicText}>{singleEvent.topic}</h4>
       <h1 className={styles.singleEvent__title}>{singleEvent.title}</h1>
       <p>
         <strong>Date</strong> <br />
-        📅{" "}
+        🗓️{" "}
         {Intl.DateTimeFormat("en-GB", dateOptions).format(
           Date.parse(singleEvent.startDate)
         )}
@@ -76,18 +69,6 @@ export const SingleEvent = () => {
           Date.parse(singleEvent.endDate)
         )}
       </p>
-      {/* <p>
-        <strong>Starts:</strong>{" "}
-        {Intl.DateTimeFormat("en-GB", dateOptions).format(
-          Date.parse(singleEvent.startDate)
-        )}
-      </p>
-      <p>
-        <strong>Ends:</strong>{" "}
-        {Intl.DateTimeFormat("en-GB", dateOptions).format(
-          Date.parse(singleEvent.endDate)
-        )}
-      </p> */}
       <p>
         <strong>Location</strong> <br />
         📍 {singleEvent.location}
@@ -124,6 +105,19 @@ export const SingleEvent = () => {
         <strong>Price</strong> <br />
         🛒 {singleEvent.price}
       </p>
+
+      {!user && (
+        <p>
+          <Link to={"/signup"} className={styles.underlined}>
+            Sign up
+          </Link>{" "}
+          or{" "}
+          <Link to={"/login"} className={styles.underlined}>
+            Log in
+          </Link>
+        </p>
+      )}
+
       {user && !isUserAttending && (
         <GetTicketBtn
           attending={attending}

@@ -79,7 +79,7 @@ export const CreateEvent = () => {
         <label>Image:</label>
         <input
           type="text"
-          placeholder="Add image URL link e.g. https://images.unsplash.com/photo-1517457373958-b7bdd4587205"
+          placeholder="Add image URL link. Try www.unsplash.com"
           onChange={(e) => setImage(e.target.value)}
           value={image}
         />
@@ -87,7 +87,7 @@ export const CreateEvent = () => {
         <label>Location:</label>
         <input
           type="text"
-          placeholder="Add location"
+          placeholder="Add event location"
           onChange={(e) => setLocation(e.target.value)}
           value={location}
         />
@@ -95,7 +95,7 @@ export const CreateEvent = () => {
         <label>Topic:</label>
         <input
           type="text"
-          placeholder="Add topic e.g. Technology or Health"
+          placeholder="Add event topic e.g. Technology or Health"
           onChange={(e) => setTopic(e.target.value)}
           value={topic}
         />

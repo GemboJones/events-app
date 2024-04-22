@@ -2,26 +2,16 @@
   padding: 2% 10%;
 }
 
-h2 {
+.events__subHeading {
   font-size: 16px;
 }
 
-h3 {
-  font-size: 20px;
-}
-
-.topicText {
-  font-size: 14px;
-  color: slategray;
-}
-
-.events {
+.eventsGrid {
   padding: 0rem;
   display: grid;
   column-gap: 40px;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
-
 .eventCard {
   list-style-type: none;
   border: 2px solid;
@@ -29,7 +19,6 @@ h3 {
   border-color: rgb(225, 226, 230);
   margin: 1.5rem 0;
 }
-
 .eventCard:hover {
   background-color: #e4ecff;
   border: 2px solid;
@@ -44,26 +33,33 @@ h3 {
   max-height: 230px;
   border-radius: 9px 9px 0px 0px;
 }
-
-.eventCard__text {
+.eventCard__textContainer {
   margin: 12px;
 }
+.topicText {
+  font-size: 14px;
+  color: slategray;
+}
+.eventCard__title {
+  font-size: 20px;
+}
+
 
 @media screen and (max-width: 830px) {
   .container {
     padding: 3% 5%;
   }
 
-  h3 {
-    font-size: 22px;
-  }
-
-  .topicText {
-    font-size: 16px;
-  }
-
   .eventCard {
   margin: 1rem 0;
 }
+
+.topicText {
+  font-size: 16px;
+}
+
+.eventCard__title {
+   font-size: 22px;
+ }
 
 }

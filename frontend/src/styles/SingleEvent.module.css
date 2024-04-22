@@ -27,6 +27,12 @@ ul {
   color: slategray;
 }
 
+.underlined {
+  text-decoration: underline;
+  font-weight: 700;
+  color: dodgerblue;
+}
+
 @media screen and (max-width: 830px) {
   .container {
     padding: 6%;

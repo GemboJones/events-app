@@ -28,12 +28,12 @@ export const Events = () => {
     <>
       <div className={styles.container}>
         <h1>Explore events</h1>
-        <h2>
+        <h2 className={styles.events__subHeading}>
           Enjoy FREE social events, webinars to boost your career and fun days
           out without the cost.
         </h2>
         <div>{isLoading && <p>Loading...</p>}</div>
-        <ul className={styles.events}>
+        <ul className={styles.eventsGrid}>
           {events.map(
             ({
               _id,
@@ -54,11 +54,11 @@ export const Events = () => {
                       alt=""
                       className={styles.eventCard__image}
                     />
-                    <div className={styles.eventCard__text}>
+                    <div className={styles.eventCard__textContainer}>
                       <p className={styles.topicText}>
                         <strong>{topic}</strong>
                       </p>
-                      <h3>{title} </h3>
+                      <h3 className={styles.eventCard__title}>{title} </h3>
                       <p>
                         {Intl.DateTimeFormat("en-GB", dateOptions).format(
                           Date.parse(startDate)

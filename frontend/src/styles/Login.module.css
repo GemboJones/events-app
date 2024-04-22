@@ -1,5 +1,5 @@
 .container {
-  padding: 4% 15%;
+  padding: 3% 20%;
 }
 
 label,
@@ -8,6 +8,7 @@ input {
 }
 input,
 select {
+  font-family: inherit;
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -30,6 +31,7 @@ button {
 .underlined {
   text-decoration: underline;
   font-weight: 700;
+  color: dodgerblue;
 }
 div.error {
   font-size: 14px;
@@ -43,3 +45,9 @@ div.error {
 /* input.error {
   border: 1px solid red;
 } */
+
+@media screen and (max-width: 830px) {
+  .container {
+    padding: 4% 6%;
+  }
+}
