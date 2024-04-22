@@ -28,7 +28,7 @@ export const SingleEvent = () => {
       });
       setIsLoading(false);
     });
-  }, [_id]);
+  }, []);
 
   const dateOptions = {
     day: "numeric",
