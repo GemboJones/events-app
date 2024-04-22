@@ -23,7 +23,7 @@ export const GetTicketBtn = ({
 
   return (
     <div>
-      {!clickedTicketBtn && <button onClick={handleClick}>Get ticket</button>}
+      {!clickedTicketBtn && <button onClick={handleClick}>Get Ticket</button>}
     </div>
   );
 };

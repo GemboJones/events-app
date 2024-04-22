@@ -13,7 +13,7 @@ export const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <Link to="/" className={styles.title}>
-        Events
+        😃 EventFree
       </Link>
       <div className={styles.menu}>
         <img
@@ -29,11 +29,11 @@ export const Navbar = () => {
           <li>
             <NavLink to="/events">Events</NavLink>
           </li>
-          {user.role === "admin" && 
-          <li>
-            <NavLink to="/create">Create Event</NavLink>
-          </li>
-          }
+          {user.role === "admin" && (
+            <li>
+              <NavLink to="/create">Create Event</NavLink>
+            </li>
+          )}
           {user ? (
             <li>
               <NavLink

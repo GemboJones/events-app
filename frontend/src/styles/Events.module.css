@@ -1,5 +1,5 @@
 .container {
-   margin: 2% 10%;
+   padding: 2% 10%;
 }
 
 .events {
@@ -11,7 +11,7 @@
 
 .eventCard {
   list-style-type: none;
-  border: 3px solid;
+  border: 1px solid;
   border-radius: 10px;
   border-color: rgb(225, 226, 230);
   margin: 1.5rem 0;
@@ -28,5 +28,15 @@
   width: 100%;
   height: auto;
   max-height: 230px;
-  border-radius: 5px 5px 0px 0px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.eventCard__text {
+  margin: 10px;
+}
+
+@media screen and (max-width: 830px) {
+  .container {
+    padding: 3% 5%;
+  }
 }

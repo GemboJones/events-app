@@ -10,7 +10,7 @@ export const GoogleCal = ({ _id }) => {
       console.log("login successful");
       extractTokens(_id, { code }).then((serverResponse) => {
         if (serverResponse) {
-          console.log("event added to calendar", serverResponse);
+          console.log("event added to calendar");
         }
         alert("Event added to Google calendar");
       });
@@ -45,7 +45,7 @@ export const GoogleCal = ({ _id }) => {
           onError={handleGoogleError}
         /> */}
         {/* {clickedTicketBtn && ( */}
-        <button onClick={() => login()}>🗓️ Add to Calendar</button>
+        <button onClick={() => login()}>Add to Calendar</button>
         {/* )} */}
       </div>
     </>
