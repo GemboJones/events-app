@@ -30,10 +30,11 @@ export const Events = () => {
   return (
     <>
       <div className={styles.container}>
-        <h2>Explore events</h2>
-        <h3>
-          Enjoy great events without the cost. Discover FREE social events, webinars to boost your career and fun days out.
-        </h3>
+        <h1>Explore events</h1>
+        <h4>
+          Enjoy FREE social events, webinars to boost your career and fun days
+          out without the cost.
+        </h4>
         <ul className={styles.events}>
           {events.map(
             ({
@@ -56,7 +57,7 @@ export const Events = () => {
                       className={styles.eventCard__image}
                     />
                     <div className={styles.eventCard__text}>
-                      <p>
+                      <p className={styles.topicText}>
                         <strong>{topic}</strong>
                       </p>
                       <h2>{title} </h2>

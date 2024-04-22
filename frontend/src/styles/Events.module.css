@@ -1,17 +1,26 @@
 .container {
-   padding: 2% 10%;
+  padding: 2% 10%;
+}
+
+h2 {
+  font-size: 21px;
+}
+
+.topicText {
+  font-size: 14px;
+  color: slategray;
 }
 
 .events {
   padding: 0rem;
   display: grid;
   column-gap: 50px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
 .eventCard {
   list-style-type: none;
-  border: 1px solid;
+  border: 2px solid;
   border-radius: 10px;
   border-color: rgb(225, 226, 230);
   margin: 1.5rem 0;
@@ -19,9 +28,10 @@
 
 .eventCard:hover {
   background-color: #e4ecff;
-  border: 3px solid;
-  border-color: #cedcff;
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.08), 0 12px 20px 0 rgba(0, 0, 0, 0.08);
+  border: 2px solid;
+  border-color: dodgerblue;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.08),
+    0 12px 20px 0 rgba(0, 0, 0, 0.08);
 }
 
 .eventCard__image {
@@ -32,11 +42,20 @@
 }
 
 .eventCard__text {
-  margin: 10px;
+  margin: 12px;
 }
 
 @media screen and (max-width: 830px) {
   .container {
     padding: 3% 5%;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .topicText {
+    font-size: 14px;
+    color: slategray;
   }
 }
