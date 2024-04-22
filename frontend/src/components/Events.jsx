@@ -32,7 +32,7 @@ export const Events = () => {
       <div className={styles.container}>
         <h2>Explore events</h2>
         <h3>
-          At EventFree you can enjoy great events without the cost. Discover FREE social events, webinars to boost your career and fun days out.
+          Enjoy great events without the cost. Discover FREE social events, webinars to boost your career and fun days out.
         </h3>
         <ul className={styles.events}>
           {events.map(
