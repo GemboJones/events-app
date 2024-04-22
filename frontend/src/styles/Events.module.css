@@ -3,7 +3,11 @@
 }
 
 h2 {
-  font-size: 21px;
+  font-size: 16px;
+}
+
+h3 {
+  font-size: 20px;
 }
 
 .topicText {
@@ -14,7 +18,7 @@ h2 {
 .events {
   padding: 0rem;
   display: grid;
-  column-gap: 50px;
+  column-gap: 40px;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
@@ -50,12 +54,16 @@ h2 {
     padding: 3% 5%;
   }
 
-  h2 {
-    font-size: 24px;
+  h3 {
+    font-size: 22px;
   }
 
   .topicText {
-    font-size: 14px;
-    color: slategray;
+    font-size: 16px;
   }
+
+  .eventCard {
+  margin: 1rem 0;
+}
+
 }

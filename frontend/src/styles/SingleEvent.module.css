@@ -1,20 +1,42 @@
 .container {
-   padding: 4% 15%;
+  padding: 4% 15%;
 }
 
-.eventImage {
+.eventImage__container {
+  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.eventImage{
    border-radius: 10px;
+   position: absolute;
    width: 100%;
-   height: 250px;
+   /* bottom: 0; */
 }
 
-ul{
-   list-style: none;
-   padding: 0;
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.topicText {
+  font-size: 14px;
+  color: slategray;
 }
 
 @media screen and (max-width: 830px) {
   .container {
     padding: 6%;
+  }
+
+  .topicText {
+    font-size: 16px;
+  }
+
+  .singleEvent__title {
+    font-size: 24px;
   }
 }
