@@ -9,42 +9,50 @@ export const CreateEvent = () => {
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
   const [topic, setTopic] = useState("");
-  // const [date, setDate] = useState("");
-  const [startDate, setStartDate] = useState("")
+  const [image, setImage] = useState("");
+  const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
-  
+  const [inputError, setInputError] = useState(false);
+  const [dbError, setDbError] = useState(false);
+
   const [newEventId, setNewEventId] = useState(null);
-  const [error, setError] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const addNewEvent = { title, description, location, topic, startDate, endDate };
-    createNewEvent(addNewEvent).then((eventAdded) => {
-      setNewEventId(eventAdded._id);
-    });
-    // setTitle("")
-    // setDescription("")
-    // setLocation("")
-    // setTopic("")
-    // setDate("")
-    // const response = await fetch('/api/addNewEvents', {
-    //   method: 'POST',
-    //   body: JSON.stringify(addNewEvent),
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   }
-    // })
-    // const json = await response.json()
-    // if (!response.ok) {
-    //   setError(json.error)
-    // }
-    // if (response.ok) {
-    //   setError(null)
-    //   setTitle('')
-    //   setDescription('')
-    //   setLocation('')
-    //   dispatch({type: 'CREATE_WORKOUT', payload: json})
-    // }
+    const addNewEvent = {
+      title,
+      description,
+      location,
+      topic,
+      image,
+      startDate,
+      endDate,
+    };
+
+    if (
+      !title ||
+      !description ||
+      !location ||
+      !topic ||
+      !image ||
+      !startDate ||
+      !endDate
+    ) {
+      setInputError(true);
+      setDbError(false);
+    } else {
+      createNewEvent(addNewEvent).then((eventAdded) => {
+        setInputError(false);
+        if (!eventAdded) {
+          console.log("no data");
+          setDbError(true);
+        } else {
+          console.log("data found");
+          setNewEventId(eventAdded._id);
+          setDbError(false);
+        }
+      });
+    }
   };
 
   return (
@@ -55,6 +63,7 @@ export const CreateEvent = () => {
         <label>Title:</label>
         <input
           type="text"
+          placeholder="Add event name"
           onChange={(e) => setTitle(e.target.value)}
           value={title}
         />
@@ -62,13 +71,23 @@ export const CreateEvent = () => {
         <label>Description:</label>
         <input
           type="text"
+          placeholder="Add event description"
           onChange={(e) => setDescription(e.target.value)}
           value={description}
+        />
+
+        <label>Image:</label>
+        <input
+          type="text"
+          placeholder="Add image URL link e.g. https://images.unsplash.com/photo-1517457373958-b7bdd4587205"
+          onChange={(e) => setImage(e.target.value)}
+          value={image}
         />
 
         <label>Location:</label>
         <input
           type="text"
+          placeholder="Add location"
           onChange={(e) => setLocation(e.target.value)}
           value={location}
         />
@@ -76,16 +95,10 @@ export const CreateEvent = () => {
         <label>Topic:</label>
         <input
           type="text"
+          placeholder="Add topic e.g. Technology or Health"
           onChange={(e) => setTopic(e.target.value)}
           value={topic}
         />
-
-        {/* <label>Event Date:</label>
-        <input
-          type="datetime-local"
-          onChange={(e) => setDate(e.target.value)}
-          value={date}
-        /> */}
 
         <label>Start Date:</label>
         <input
@@ -102,7 +115,11 @@ export const CreateEvent = () => {
         />
 
         <button type="submit">Create Event</button>
-        {/* {error && <div className="error">{error}</div>} */}
+
+        {dbError && <div className={styles.error}>Error creating event</div>}
+        {inputError && (
+          <div className={styles.error}>Please fill in all fields</div>
+        )}
       </form>
       {newEventId && <Navigate to={`/events/${newEventId}`} />}
     </div>
