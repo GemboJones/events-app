@@ -30,7 +30,11 @@ export const SingleEvent = () => {
     });
   }, [_id]);
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return (
+    <div className={styles.isLoading}>
+      <p>Loading...</p>
+    </div>
+  );
 
   const dateOptions = {
     day: "numeric",

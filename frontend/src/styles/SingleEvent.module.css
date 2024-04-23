@@ -2,6 +2,14 @@
   padding: 4% 15%;
 }
 
+.isLoading {
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  color: dodgerblue;
+  padding: 4% 15%;
+}
+
 .eventImage__container {
   border-radius: 10px;
   position: relative;

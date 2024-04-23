@@ -15,6 +15,12 @@ export const Events = () => {
     setIsLoading(false);
   }, []);
 
+  if (events.length === 0) return (
+    <div className={styles.isLoading}>
+      <p>Loading...</p>
+    </div>
+  );
+
   const dateOptions = {
     day: "numeric",
     month: "long",
@@ -32,7 +38,7 @@ export const Events = () => {
           Enjoy FREE social events, webinars to boost your career and fun days
           out without the cost.
         </h2>
-        <div>{isLoading && <p>Loading...</p>}</div>
+        
         <ul className={styles.eventsGrid}>
           {events.map(
             ({
