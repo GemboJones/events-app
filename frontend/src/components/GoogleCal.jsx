@@ -7,10 +7,11 @@ export const GoogleCal = ({ _id }) => {
   const login = useGoogleLogin({
     onSuccess: (googleResponse) => {
       const { code } = googleResponse;
-      console.log("login successful");
+      
+      console.log("login successful", { code });
       extractTokens(_id, { code }).then((serverResponse) => {
         if (serverResponse) {
-          console.log("event added to calendar");
+          console.log("event added to calendar", serverResponse);
         }
         alert("Event added to Google calendar");
       });
