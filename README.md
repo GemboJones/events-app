@@ -34,4 +34,4 @@ npm run dev
 
 <br />
 
->**Note:** you will not be able to run the full app in local without setting up a google developer account, creating Google OAuth2 credentials and adding CLIENT_ID, CLIENT_SECRET and redirect URI to a .env file in backend directory. You can use the app in local, but won't be able to add events to Google Calendar. However, feel free to have a go on the live site with full functionality >>> **<a href="https://eventfree-events.netlify.app/">EventFree Web App</a>**
+>**Note:** you will not be able to to add events to your Google Calendar in local setup
