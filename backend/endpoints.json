@@ -51,7 +51,7 @@
           {
             "_id": "661416956162a47c6aeccbcb",
             "name": "Sam Curtis",
-            "email": "samcurtis@company.com",
+            "email": "samcurtis@fakeemail.com",
             "password": "password",
             "role": "admin",
             "myEvents": [],
@@ -61,7 +61,7 @@
           {
             "_id": "66141db122c4c138512b96ae",
             "name": "Leanne Long",
-            "email": "leannelong@company.com",
+            "email": "leannelong@fakeemail.com",
             "password": "password",
             "role": "member",
             "myEvents": [],
@@ -71,7 +71,7 @@
           {
             "_id": "6614063a6162a47c6aeccbc8",
             "name": "Bob Jones",
-            "email": "bobjones@company.com",
+            "email": "bobjones@fakeemail.com",
             "password": "password",
             "role": "member",
             "myEvents": [],
@@ -182,7 +182,7 @@
       {
         "_id": "6614063a6162a47c6aeccbc8",
         "name": "Bob Jones",
-        "email": "bobjones@company.com",
+        "email": "bobjones@fakeemail.com",
         "password": "password",
         "role": "member",
         "myEvents": [],
@@ -192,7 +192,7 @@
       {
         "_id": "661416956162a47c6aeccbcb",
         "name": "Sam Curtis",
-        "email": "samcurtis@company.com",
+        "email": "samcurtis@fakeemail.com",
         "password": "password",
         "role": "admin",
         "myEvents": [],
@@ -202,7 +202,7 @@
       {
         "_id": "66141db122c4c138512b96ae",
         "name": "Leanne Long",
-        "email": "leannelong@company.com",
+        "email": "leannelong@fakeemail.com",
         "password": "password",
         "role": "member",
         "myEvents": [],
@@ -216,7 +216,7 @@
     "exampleResponse": {
       "_id": "6614063a6162a47c6aeccbc8",
       "name": "Bob Jones",
-      "email": "bobjones@company.com",
+      "email": "bobjones@fakeemail.com",
       "password": "password",
       "role": "member",
       "myEvents": [],
@@ -253,14 +253,14 @@
     "description": "accepts an object of user data, adds the new user to the database and returns an object of the new user",
     "exampleRequest": {
       "name": "Sam Delaney",
-      "email": "samdelaney@company.com",
-      "password": "Iheartevents",
+      "email": "samdelaney@fakeemail.com",
+      "password": "events",
       "role": "member"
     },
     "exampleResponse": {
       "name": "Sam Delaney",
-      "email": "samdelaney@company.com",
-      "password": "Iheartevents",
+      "email": "samdelaney@fakeemail.com",
+      "password": "events",
       "role": "member",
       "myEvents": [],
       "created_at": "2024-04-23T01:08:32.755Z",
@@ -271,13 +271,13 @@
   "POST /api/login": {
     "description": "accepts an object of user data, searches the database for the user and returns an object of the user",
     "exampleRequest": {
-      "email": "bobjones@company.com",
+      "email": "bobjones@fakeemail.com",
       "password": "password"
     },
     "exampleResponse": {
       "_id": "6614063a6162a47c6aeccbc8",
       "name": "Bob Jones",
-      "email": "bobjones@company.com",
+      "email": "bobjones@fakeemail.com",
       "password": "password",
       "role": "member",
       "myEvents": [],
@@ -362,7 +362,7 @@
         {
           "_id": "66271ad31e493ffde13bc86e",
           "name": "Judd",
-          "email": "judd@company.com",
+          "email": "judd@fakeemail.com",
           "password": "hello",
           "role": "member",
           "myEvents": [],
