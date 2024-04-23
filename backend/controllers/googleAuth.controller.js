@@ -10,12 +10,6 @@ const oAuth2Client = new google.auth.OAuth2(
   "https://eventfree-events.netlify.app"
 );
 
-// const oAuth2Client = new OAuth2Client(
-//   process.env.CLIENT_ID,
-//   process.env.CLIENT_SECRET,
-//   "http://localhost:5173"
-// );
-
 exports.getToken = async (req, res) => {
   try {
     console.log("in controller");
@@ -56,15 +50,20 @@ exports.getToken = async (req, res) => {
 
     oAuth2Client.setCredentials({ refresh_token: refresh_token });
     const calendar = google.calendar("v3");
+
     const response = await calendar.events.insert({
       calendarId: "primary",
       auth: oAuth2Client,
       requestBody: createEvent,
     });
 
-    console.log(response.data);
+    const googleCalendarEvent = response.data
+    console.log("google calendar event", googleCalendarEvent);
 
-    res.status(200).send(response.data);
+    if (!googleCalendarEvent) {
+      return res.status(404).send({ message: "google calendar event was not created" });
+    }
+    res.status(200).send(googleCalendarEvent);
     
   } catch (error) {
     console.log(error);

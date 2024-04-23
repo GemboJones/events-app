@@ -1,5 +1,4 @@
 import React from "react";
-// import { GoogleLogin } from "@react-oauth/google";
 import { useGoogleLogin } from "@react-oauth/google";
 import { extractTokens } from "../api";
 
@@ -7,8 +6,8 @@ export const GoogleCal = ({ _id }) => {
   const login = useGoogleLogin({
     onSuccess: (googleResponse) => {
       const { code } = googleResponse;
-      
       console.log("login successful", { code });
+
       extractTokens(_id, { code }).then((serverResponse) => {
         if (serverResponse) {
           console.log("event added to calendar", serverResponse);
@@ -24,30 +23,10 @@ export const GoogleCal = ({ _id }) => {
     },
   });
 
-  //   const handleGoogleResponse = (response) => {
-  //     console.log(response);
-  //     const { credential } = response;
-  //     getTokenInfo({ credential }).then((stuff) => {
-  //       console.log(stuff);
-  //     });
-  //   };
-
-  //   const handleGoogleError = (err) => {
-  //     alert("Login Failed:", err);
-  //     console.log(err);
-  //   };
-
   return (
     <>
       <div>
-        {/* <p>Add to Google Calendar</p>
-        <GoogleLogin
-          onSuccess={handleGoogleResponse}
-          onError={handleGoogleError}
-        /> */}
-        {/* {clickedTicketBtn && ( */}
         <button onClick={() => login()}>Add to Calendar</button>
-        {/* )} */}
       </div>
     </>
   );
