@@ -1,0 +1,379 @@
+{
+  "GET /api": {
+    "description": "returns a json representation of all the available endpoints of EventFree API"
+  },
+  "GET /api/events": {
+    "description": "returns an array of all events, populating the attending users for each event, sorted by date",
+    "exampleResponse": [
+      {
+        "_id": "661d38b080d315762f956525",
+        "title": "Country Walking Club",
+        "description": "Explore the great outdoors",
+        "location": "New Forest",
+        "image": "https://images.unsplash.com/photo-1528907298109-e64971adc8e5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "topic": "Nature",
+        "price": "free",
+        "attending": [
+          {
+            "_id": "661b318d7cda2b7e728d4478",
+            "name": "Simon Christoff",
+            "email": "member@member.com",
+            "password": "member",
+            "role": "member",
+            "myEvents": [],
+            "created_at": "2024-04-13T20:53:00.419Z",
+            "__v": 0
+          },
+          {
+            "_id": "66269945d39414c20b5c42f6",
+            "name": "Victoria",
+            "email": "victoria@gmail.com",
+            "password": "firfYp-nacwep-7tazfy",
+            "role": "admin",
+            "myEvents": [],
+            "created_at": "2024-04-22T15:51:24.074Z",
+            "__v": 0
+          }
+        ],
+        "__v": 0,
+        "endDate": "2024-04-25T10:00:00.000Z",
+        "startDate": "2024-04-25T08:00:00.000Z"
+      },
+      {
+        "_id": "66141d3422c4c138512b96a9",
+        "title": "Office Bake Sale",
+        "description": "Raising money for homeless shelter",
+        "location": "Office",
+        "image": "https://images.pexels.com/photos/3309805/pexels-photo-3309805.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "topic": "Social",
+        "price": "free",
+        "attending": [
+          {
+            "_id": "661416956162a47c6aeccbcb",
+            "name": "Sam Curtis",
+            "email": "samcurtis@company.com",
+            "password": "password",
+            "role": "admin",
+            "myEvents": [],
+            "created_at": "2024-04-08T14:58:56.551Z",
+            "__v": 0
+          },
+          {
+            "_id": "66141db122c4c138512b96ae",
+            "name": "Leanne Long",
+            "email": "leannelong@company.com",
+            "password": "password",
+            "role": "member",
+            "myEvents": [],
+            "created_at": "2024-04-08T16:35:13.016Z",
+            "__v": 0
+          },
+          {
+            "_id": "6614063a6162a47c6aeccbc8",
+            "name": "Bob Jones",
+            "email": "bobjones@company.com",
+            "password": "password",
+            "role": "member",
+            "myEvents": [],
+            "created_at": "2024-04-08T14:58:56.551Z",
+            "__v": 0
+          },
+          {
+            "_id": "661b30b77cda2b7e728d4472",
+            "name": "Jemima Billington",
+            "email": "admin@admin.com",
+            "password": "admin",
+            "role": "admin",
+            "myEvents": [],
+            "created_at": "2024-04-13T20:53:00.419Z",
+            "__v": 0
+          }
+        ],
+        "__v": 0,
+        "endDate": "2024-04-29T14:00:00.000Z",
+        "startDate": "2024-04-29T12:00:00.000Z"
+      },
+      {
+        "_id": "661eaa518cef25a3a8330afd",
+        "title": "Dinner Party",
+        "description": "Have a great night!",
+        "location": "London",
+        "image": "https://images.unsplash.com/photo-1619895092538-128341789043?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "topic": "Food & Drink",
+        "price": "free",
+        "attending": [
+          {
+            "_id": "66255c312f4c78de909778e6",
+            "name": "Nicola",
+            "email": "nicola@gmail.com",
+            "password": "password",
+            "role": "member",
+            "myEvents": [],
+            "created_at": "2024-04-21T18:03:44.689Z",
+            "__v": 0
+          },
+          {
+            "_id": "662693bad39414c20b5c4235",
+            "name": "Dave ",
+            "email": "dave@gmail.com",
+            "password": "parklife",
+            "role": "member",
+            "myEvents": [],
+            "created_at": "2024-04-22T15:51:24.074Z",
+            "__v": 0
+          },
+          {
+            "_id": "66269945d39414c20b5c42f6",
+            "name": "Victoria",
+            "email": "victoria@gmail.com",
+            "password": "firfYp-nacwep-7tazfy",
+            "role": "admin",
+            "myEvents": [],
+            "created_at": "2024-04-22T15:51:24.074Z",
+            "__v": 0
+          }
+        ],
+        "startDate": "2024-05-04T17:00:00.000Z",
+        "endDate": "2024-05-04T19:30:00.000Z",
+        "__v": 0
+      }
+    ]
+  },
+  "GET /api/events/:id": {
+    "description": "returns an object of a single event by the given id, populating the attending users",
+    "exampleResponse": {
+      "_id": "661d321780d315762f9564ec",
+      "title": "Kids Baking Class",
+      "description": "Kids learn to bake!",
+      "location": "Kitchen",
+      "image": "https://images.unsplash.com/photo-1596425720861-eb7d31f57c11?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "topic": "Baking",
+      "price": "free",
+      "attending": [
+        {
+          "_id": "661b30b77cda2b7e728d4472",
+          "name": "Jemima Billington",
+          "email": "admin@admin.com",
+          "password": "admin",
+          "role": "admin",
+          "myEvents": [],
+          "created_at": "2024-04-13T20:53:00.419Z",
+          "__v": 0
+        },
+        {
+          "_id": "661b318d7cda2b7e728d4478",
+          "name": "Simon Christoff",
+          "email": "member@member.com",
+          "password": "member",
+          "role": "member",
+          "myEvents": [],
+          "created_at": "2024-04-13T20:53:00.419Z",
+          "__v": 0
+        }
+      ],
+      "__v": 0,
+      "endDate": "2024-07-01T14:00:00.000Z",
+      "startDate": "2024-07-01T12:00:00.000Z"
+    }
+  },
+  "GET /api/users": {
+    "description": "returns an array of all users",
+    "exampleResponse": [
+      {
+        "_id": "6614063a6162a47c6aeccbc8",
+        "name": "Bob Jones",
+        "email": "bobjones@company.com",
+        "password": "password",
+        "role": "member",
+        "myEvents": [],
+        "created_at": "2024-04-08T14:58:56.551Z",
+        "__v": 0
+      },
+      {
+        "_id": "661416956162a47c6aeccbcb",
+        "name": "Sam Curtis",
+        "email": "samcurtis@company.com",
+        "password": "password",
+        "role": "admin",
+        "myEvents": [],
+        "created_at": "2024-04-08T14:58:56.551Z",
+        "__v": 0
+      },
+      {
+        "_id": "66141db122c4c138512b96ae",
+        "name": "Leanne Long",
+        "email": "leannelong@company.com",
+        "password": "password",
+        "role": "member",
+        "myEvents": [],
+        "created_at": "2024-04-08T16:35:13.016Z",
+        "__v": 0
+      }
+    ]
+  },
+  "GET /api/users/:id": {
+    "description": "returns an object of a single user by the given id",
+    "exampleResponse": {
+      "_id": "6614063a6162a47c6aeccbc8",
+      "name": "Bob Jones",
+      "email": "bobjones@company.com",
+      "password": "password",
+      "role": "member",
+      "myEvents": [],
+      "created_at": "2024-04-08T14:58:56.551Z",
+      "__v": 0
+    }
+  },
+  "POST /api/events": {
+    "description": "accepts an object of event data, adds the new event to the database and returns an object of the new event",
+    "exampleRequest": {
+      "title": "Vanessa's Birthday",
+      "description": "Celebrate a special birthday!",
+      "location": "Hemel Hempstead",
+      "topic": "Birthday",
+      "image": "https://images.unsplash.com/photo-1529244927325-b3ef2247b9fb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "startDate": "2024-05-29T00:00:00.000Z",
+      "endDate": "2024-05-29T23:59:00.000Z"
+    },
+    "exampleResponse": {
+      "title": "Vanessa's Birthday",
+      "description": "Celebrate a special birthday!",
+      "location": "Hemel Hempstead",
+      "image": "https://images.unsplash.com/photo-1529244927325-b3ef2247b9fb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "topic": "Birthday",
+      "price": "free",
+      "attending": [],
+      "startDate": "2024-05-29T00:00:00.000Z",
+      "endDate": "2024-05-29T23:59:00.000Z",
+      "_id": "6625d320c24c29f992b2785c",
+      "__v": 0
+    }
+  },
+  "POST /api/users": {
+    "description": "accepts an object of user data, adds the new user to the database and returns an object of the new user",
+    "exampleRequest": {
+      "name": "Sam Delaney",
+      "email": "samdelaney@company.com",
+      "password": "Iheartevents",
+      "role": "member"
+    },
+    "exampleResponse": {
+      "name": "Sam Delaney",
+      "email": "samdelaney@company.com",
+      "password": "Iheartevents",
+      "role": "member",
+      "myEvents": [],
+      "created_at": "2024-04-23T01:08:32.755Z",
+      "_id": "66270a9360a9c76062278fd7",
+      "__v": 0
+    }
+  },
+  "POST /api/login": {
+    "description": "accepts an object of user data, searches the database for the user and returns an object of the user",
+    "exampleRequest": {
+      "email": "bobjones@company.com",
+      "password": "password"
+    },
+    "exampleResponse": {
+      "_id": "6614063a6162a47c6aeccbc8",
+      "name": "Bob Jones",
+      "email": "bobjones@company.com",
+      "password": "password",
+      "role": "member",
+      "myEvents": [],
+      "created_at": "2024-04-08T14:58:56.551Z",
+      "__v": 0
+    }
+  },
+  "POST /api/auth/:id": {
+    "description": "sends request to Google to extract encoded tokens, fetches event by given id from the database, adds the event to the users Google Calendar and returns an object of the added Google calendar event",
+    "exampleRequest": {
+      "code": "4/0AeaYSHAbz19i8cNbzzM2-BDcAhPrb0DBu467dGunciVS5x0SMOatzRmJpQIHuRIN9p9i2A"
+    },
+    "exampleResponse": {
+      "kind": "calendar#event",
+      "etag": "\"3427684838262000\"",
+      "id": "dtn0ppq5ugn31n4oujl8rt63go",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=ZHRuMGdncTV1Z24zMW40b3VqbDhydDYzZ28gZ2VtYm9qb25lc0Bt",
+      "created": "2024-04-23T03:20:19.000Z",
+      "updated": "2024-04-23T03:20:19.131Z",
+      "summary": "Learn Web Development",
+      "description": "Learn JavaScript",
+      "location": "Online",
+      "creator": {
+        "email": "gem@gmail.com",
+        "self": true
+      },
+      "organizer": {
+        "email": "gem@gmail.com",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2024-07-01T10:00:00+01:00",
+        "timeZone": "Europe/London"
+      },
+      "end": {
+        "dateTime": "2024-07-01T15:00:00+01:00",
+        "timeZone": "Europe/London"
+      },
+      "iCalUID": "dtn0ggq5ugn31n4oujl9rt64go@google.com",
+      "sequence": 0,
+      "reminders": {
+        "useDefault": false,
+        "overrides": [
+          {
+            "method": "email",
+            "minutes": 1440
+          },
+          {
+            "method": "popup",
+            "minutes": 15
+          }
+        ]
+      },
+      "eventType": "default"
+    }
+  },
+  "PATCH /api/events/:id": {
+    "description": "accepts an object and updates event by given id, returning an object of the updated event with attending users populated",
+    "exampleRequest": {
+	"attending": "66271ad31e493ffde13bc86e"
+},
+    "exampleResponse": {
+      "_id": "66141d3422c4c138512b96a9",
+      "title": "Office Bake Sale",
+      "description": "Raising money for homeless shelter",
+      "location": "Office",
+      "image": "https://images.pexels.com/photos/3309805/pexels-photo-3309805.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "topic": "Social",
+      "price": "free",
+      "attending": [
+        {
+          "_id": "661b318d7cda2b7e728d4478",
+          "name": "Simon Christoff",
+          "email": "member@member.com",
+          "password": "member",
+          "role": "member",
+          "myEvents": [],
+          "created_at": "2024-04-13T20:53:00.419Z",
+          "__v": 0
+        },
+        {
+          "_id": "66271ad31e493ffde13bc86e",
+          "name": "Judd",
+          "email": "judd@company.com",
+          "password": "hello",
+          "role": "member",
+          "myEvents": [],
+          "created_at": "2024-04-23T02:19:14.186Z",
+          "__v": 0
+        }
+      ],
+      "__v": 0,
+      "endDate": "2024-04-29T14:00:00.000Z",
+      "startDate": "2024-04-29T12:00:00.000Z"
+    }
+  }
+}
+
