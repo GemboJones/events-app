@@ -6,3 +6,45 @@ Visitors can view all available events. Once signed up as a user you can view wh
 
 ### Backend: <a href="https://events-app-api-nlkr.onrender.com/api">EventFree API</a>
 View a description of available endpoints for the backend API that runs EventFree frontend web app.
+
+<br/>
+
+# Local Setup:
+
+Clone this repository into your local device
+```
+git clone https://github.com/GemboJones/events-app.git
+```
+## Backend
+
+Change to backend directory
+```
+cd backend
+```
+Install dependencies and dev-dependencies
+```
+npm install
+```
+Start up
+```
+npm run dev
+```
+
+## Frontend
+
+Clone this repository into your local device
+```
+git clone https://github.com/GemboJones/events-app.git
+```
+Change to frontend directory
+```
+cd ../frontend
+```
+Install dependencies and dev-dependencies
+```
+npm install
+```
+Start up
+```
+npm run dev
+```
