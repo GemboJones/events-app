@@ -7,8 +7,9 @@ Visitors can view all available events. Once signed up as a user you can view wh
 ### Backend: <a href="https://events-app-api-nlkr.onrender.com/api">EventFree API</a>
 View a description of available endpoints for the backend API that runs EventFree frontend web app.
 
->**Note:** to use the full functionality including adding events to Google Calendar, I will need to add you as a tester. Reach out to me on LinkedIn and I'll add you! <br/>
-Connect on LinkedIn: **<a href="https://www.linkedin.com/in/gemma-randall-design/">Gemma Randall LinkedIn</a>** 
+<br />
+
+>**Note:** to use the full functionality on <a href="https://eventfree-events.netlify.app/">EventFree Web App</a> including adding events to Google Calendar, I will need to add you as a tester. Reach out to me on LinkedIn and I can add you! >>> **<a href="https://www.linkedin.com/in/gemma-randall-design/">Gemma Randall LinkedIn</a>** 
 
 <br/>
 
@@ -18,32 +19,19 @@ Clone this repository into your local device
 ```
 git clone https://github.com/GemboJones/events-app.git
 ```
-## Backend
-
-Change to backend directory
-```
-cd backend
-```
-Install dependencies and dev-dependencies
-```
-npm install
-```
-Start up
-```
-npm run dev
-```
-
-## Frontend
-
 Change to frontend directory
 ```
-cd ../frontend
+cd frontend
 ```
 Install dependencies and dev-dependencies
 ```
 npm install
 ```
-Start up
+Start up!
 ```
 npm run dev
 ```
+
+<br />
+
+>**Note:** you will not be able to run the full app in local without setting up a google developer account, creating Google OAuth2 credentials and adding CLIENT_ID, CLIENT_SECRET and redirect URI to a .env file in backend directory. You can use the app in local, but won't be able to add events to Google Calendar. However, feel free to have a go on the live site with full functionality >>> **<a href="https://eventfree-events.netlify.app/">EventFree Web App</a>**
