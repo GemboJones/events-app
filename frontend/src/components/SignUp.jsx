@@ -13,7 +13,6 @@ export const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
-  const [error, setError] = useState(false);
 
   const [dbError, setDbError] = useState(false);
   const [inputError, setInputError] = useState(false);
@@ -26,15 +25,15 @@ export const SignUp = () => {
       setInputError(true);
       setDbError(false);
     } else {
-      createNewUser(addNewUser).then((userAdded) => {
+      createNewUser(addNewUser).then((response) => {
         setInputError(false);
-        if (!userAdded) {
-          // need to check for existing user credentials in BE
+        console.log(response);
+        if (response.message) {
           console.log("sign up unsuccessful");
           setDbError(true);
-        } else {
+        } else if (response.email) {
           console.log("sign up successful");
-          setUser(userAdded);
+          setUser(response);
           setDbError(false);
           navigate("/");
         }
