@@ -22,14 +22,14 @@ export const Login = () => {
           setInputError(true);
           setDbError(false);
         } else {
-          userLogin(formData).then((userData) => {
+          userLogin(formData).then((response) => {
             setInputError(false);
-            if (!userData) {
-              console.log("no data");
+            if (response.message) {
+              console.log("login unsuccessful");
               setDbError(true);
-            } else {
-              console.log("data found");
-              setUser(userData);
+            } else if (response.email) {
+              console.log("login successful");
+              setUser(response);
               setDbError(false);
               navigate("/");
             }
