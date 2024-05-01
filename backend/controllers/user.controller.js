@@ -21,7 +21,7 @@ exports.getUser = async (req, res) => {
 
 exports.createUser = async (req, res) => {
   try {
-    const { email } = req.body
+    const { email } = req.body;
     const emailExists = await User.findOne({ email });
 
     if (emailExists) {
@@ -29,6 +29,30 @@ exports.createUser = async (req, res) => {
     }
     const user = await User.create(req.body);
     res.status(201).send(user);
+  } catch (error) {
+    res.status(500).send({ message: error.message });
+  }
+};
+
+exports.updateUser = async (req, res) => {
+  try {
+    // user id
+    const { id } = req.params;
+
+    if (Object.keys(req.body)[0] === "myEvents") {
+      const user = await User.findByIdAndUpdate(id, {$addToSet: req.body});
+      if (!user) {
+        return res.status(404).send({ message: "User not found" });
+      }
+    } else {
+      const user = await User.findByIdAndUpdate(id, req.body);
+      if (!user) {
+        return res.status(404).send({ message: "User not found" });
+      }
+    }
+    const updatedUser = await User.findById(id).populate("myEvents");
+
+    res.status(200).send(updatedUser);
   } catch (error) {
     res.status(500).send({ message: error.message });
   }
