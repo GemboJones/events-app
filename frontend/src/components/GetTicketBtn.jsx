@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import UserContext from "../context/userContext";
-import { updateAttending } from "../api";
+import { updateAttending, updateUserEvents } from "../api";
 
 export const GetTicketBtn = ({
   _id,
@@ -13,12 +13,17 @@ export const GetTicketBtn = ({
 
   const handleClick = () => {
     setClickedTicketBtn(true);
-    setIsUserAttending(true)
-    updateAttending(_id, { attending: user }).then((eventUpdated) => {});
-    setAttending((currentAttending) => {
-      return [user, ...currentAttending];
+    setIsUserAttending(true);
+    updateUserEvents(user._id, { myEvents: _id }).then((response) => {
+      console.log("user response>>>", response);
     });
-    alert(`We'll see you there ${user.name}!`);
+    updateAttending(_id, { attending: user._id }).then((response) => {
+      console.log("event response>>>", response);
+      setAttending((currentAttending) => {
+        return [user, ...currentAttending];
+      });
+      alert(`We'll see you there ${user.name}!`);
+    });
   };
 
   return (
