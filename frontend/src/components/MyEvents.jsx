@@ -39,7 +39,7 @@ export const MyEvents = () => {
     <>
       <div className={styles.container}>
         <h1>My Events</h1>
-        {!myEvents ? (
+        {myEvents.length === 0 ? (
           <p>
             No events booked.{" "}
             <Link to={"/events"} className={styles.underlined}>
