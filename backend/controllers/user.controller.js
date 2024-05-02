@@ -12,7 +12,8 @@ exports.getAllUsers = async (req, res) => {
 exports.getUser = async (req, res) => {
   try {
     const { id } = req.params;
-    const user = await User.findById(id);
+    const user = await User.findById(id).populate("myEvents");
+
     res.status(200).send(user);
   } catch (error) {
     res.status(500).send({ message: error.message });

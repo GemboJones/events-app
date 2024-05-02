@@ -26,25 +26,27 @@ export const Navbar = () => {
           className={`${styles.menuItems} ${isMenuOpen && styles.menuOpen}`}
           onClick={() => setIsMenuOpen(false)}
         >
-          <li>
-            <NavLink to="/events">Events</NavLink>
-          </li>
-          {user.role === "admin" && (
-            <li>
-              <NavLink to="/create">Create Event</NavLink>
-            </li>
-          )}
           {user ? (
-            <li>
-              <NavLink
-                to="/"
-                onClick={() => {
-                  setUser("");
-                }}
-              >
-                Logout
-              </NavLink>
-            </li>
+            <>
+              {user.role === "admin" && (
+                <li>
+                  <NavLink to="/create">Create Event</NavLink>
+                </li>
+              )}
+              <li>
+                <NavLink to="/myevents">My Events</NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/"
+                  onClick={() => {
+                    setUser("");
+                  }}
+                >
+                  Logout
+                </NavLink>
+              </li>
+            </>
           ) : (
             <>
               <li>

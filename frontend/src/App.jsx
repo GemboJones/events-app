@@ -8,6 +8,7 @@ import { SingleEvent } from "./components/SingleEvent";
 import { CreateEvent } from "./components/CreateEvent";
 import { SignUp } from "./components/SignUp";
 import { UserProvider } from "./context/userContext";
+import { MyEvents } from "./components/MyEvents";
 
 const App = () => {
   return (
@@ -15,10 +16,11 @@ const App = () => {
       <UserProvider>
         <Navbar />
         <Routes>
+          <Route path="/" element={<Events />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/" element={<Events />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/myevents" element={<MyEvents />} />
           <Route path="/create" element={<CreateEvent />} />
           <Route path="/events/:_id" element={<SingleEvent />} />
         </Routes>
