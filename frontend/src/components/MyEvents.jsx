@@ -19,7 +19,7 @@ export const MyEvents = () => {
     setIsLoading(false);
   }, [user._id]);
 
-  if (myEvents.length === 0)
+  if (isLoading)
     return (
       <div className={styles.isLoading}>
         <p>Loading...</p>
