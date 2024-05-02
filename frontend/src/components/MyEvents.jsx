@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export const MyEvents = () => {
   const { user } = useContext(UserContext);
 
-  const [myEvents, setMyEvents] = useState("");
+  const [myEvents, setMyEvents] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
