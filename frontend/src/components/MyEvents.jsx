@@ -39,14 +39,7 @@ export const MyEvents = () => {
     <>
       <div className={styles.container}>
         <h1>My Events</h1>
-        {!isLoading && myEvents.length === 0 ? (
-          <p>
-            No events booked.{" "}
-            <Link to={"/events"} className={styles.underlined}>
-              Browse Events
-            </Link>
-          </p>
-        ) : (
+        {myEvents.length !== 0 ? (
           <ul className={styles.eventsGrid}>
             {myEvents.map(
               ({
@@ -86,6 +79,13 @@ export const MyEvents = () => {
               }
             )}
           </ul>
+        ) : (
+          <p>
+            No events booked.{" "}
+            <Link to={"/events"} className={styles.underlined}>
+              Browse Events
+            </Link>
+          </p>
         )}
       </div>
     </>
