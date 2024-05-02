@@ -4,7 +4,7 @@
 
 .isLoading {
   text-align: center;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 18px;
   color: dodgerblue;
   padding: 4% 15%;
@@ -51,7 +51,11 @@
 .eventCard__title {
   font-size: 20px;
 }
-
+.underlined {
+  text-decoration: underline;
+  font-weight: 700;
+  color: dodgerblue;
+}
 
 @media screen and (max-width: 830px) {
   .container {
