@@ -19,12 +19,12 @@ export const MyEvents = () => {
     setIsLoading(false);
   }, [user._id]);
 
-  if (myEvents.length === 0)
-    return (
-      <div className={styles.isLoading}>
-        <p>Loading...</p>
-      </div>
-    );
+  // if (myEvents.length === 0)
+  //   return (
+  //     <div className={styles.isLoading}>
+  //       <p>Loading...</p>
+  //     </div>
+  //   );
 
   const dateOptions = {
     day: "numeric",
