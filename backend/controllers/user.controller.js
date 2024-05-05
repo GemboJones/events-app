@@ -14,6 +14,10 @@ exports.getUser = async (req, res) => {
     const { id } = req.params;
     const user = await User.findById(id).populate("myEvents");
 
+    user.myEvents.sort(
+      (a, b) => a.startDate.getTime() - b.startDate.getTime()
+    );
+    
     res.status(200).send(user);
   } catch (error) {
     res.status(500).send({ message: error.message });
@@ -41,7 +45,7 @@ exports.updateUser = async (req, res) => {
     const { id } = req.params;
 
     if (Object.keys(req.body)[0] === "myEvents") {
-      const user = await User.findByIdAndUpdate(id, {$addToSet: req.body});
+      const user = await User.findByIdAndUpdate(id, { $addToSet: req.body });
       if (!user) {
         return res.status(404).send({ message: "User not found" });
       }
