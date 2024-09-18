@@ -18,6 +18,7 @@ export const Events = () => {
   if (events.length === 0) return (
     <div className={styles.isLoading}>
       <p>Loading...</p>
+      <p className={styles.isLoading2}>Free tier, up to 60 secs load time</p>
     </div>
   );
 

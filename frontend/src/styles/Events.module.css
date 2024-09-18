@@ -4,10 +4,15 @@
 
 .isLoading {
   text-align: center;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 18px;
   color: dodgerblue;
   padding: 4% 15%;
+}
+
+.isLoading2 {
+  font-weight: 400;
+  font-size: 15px;
 }
 
 .events__subHeading {
@@ -63,15 +68,14 @@
   }
 
   .eventCard {
-  margin: 1rem 0;
-}
+    margin: 1rem 0;
+  }
 
-.topicText {
-  font-size: 16px;
-}
+  .topicText {
+    font-size: 16px;
+  }
 
-.eventCard__title {
-   font-size: 22px;
- }
-
+  .eventCard__title {
+    font-size: 22px;
+  }
 }
