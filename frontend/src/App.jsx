@@ -9,6 +9,7 @@ import { CreateEvent } from "./components/CreateEvent";
 import { SignUp } from "./components/SignUp";
 import { UserProvider } from "./context/userContext";
 import { MyEvents } from "./components/MyEvents";
+import { Footer } from "./components/Footer";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/create" element={<CreateEvent />} />
           <Route path="/events/:_id" element={<SingleEvent />} />
         </Routes>
+        <Footer />
       </UserProvider>
     </>
   );
