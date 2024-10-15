@@ -19,9 +19,9 @@ export const Events = () => {
     return (
       <div className={styles.isLoading}>
         <p>Loading...</p>
-        <p className={styles.isLoading2}>
+        {/* <p className={styles.isLoading2}>
           Bear with. Free server slow to wake 😴
-        </p>
+        </p> */}
       </div>
     );
 
