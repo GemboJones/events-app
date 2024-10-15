@@ -46,11 +46,10 @@ export const Events = () => {
             alt=""
           />
           <div className={styles.hero__overlay}></div>
-          <div className={styles.hero__heading}>
-            <h1>Explore events</h1>
-            <h2 className={styles.events__subHeading}>
-              Enjoy FREE social events, webinars to boost your career and fun
-              days out without the cost.
+          <div className={styles.hero__textContainer}>
+            <h1 className={styles.hero__heading}>Explore events</h1>
+            <h2 className={styles.hero__subHeading}>
+              Enjoy FREE social events, webinars and fun days out without the cost.
             </h2>
           </div>
         </div>
