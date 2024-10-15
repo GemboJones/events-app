@@ -37,17 +37,17 @@
   width: 100%;
 }
 
-.hero__heading {
+.hero__textContainer {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-h1 {
+.hero__heading {
   text-align: center;
 }
-.events__subHeading {
+.hero__subHeading {
   font-size: 20px;
   font-weight: 600;
 }
