@@ -41,7 +41,7 @@ export const Events = () => {
           <img
             className={styles.hero__image}
             src={
-              "https://images.unsplash.com/photo-1471116260918-e7a900488f12?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              "https://images.unsplash.com/photo-1471116260918-e7a900488f12?q=80&w=1500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             }
             alt=""
           />
@@ -49,8 +49,14 @@ export const Events = () => {
           <div className={styles.hero__textContainer}>
             <h1 className={styles.hero__heading}>Explore events</h1>
             <h2 className={styles.hero__subHeading}>
-              Enjoy FREE social events, webinars and fun days out without the cost.
+              Enjoy FREE social events, webinars and fun days out without the
+              cost.
             </h2>
+            <div className={styles.hero__buttonContainer}>
+              <Link className={styles.hero__button} to="/signup">
+                Join EventFree
+              </Link>
+            </div>
           </div>
         </div>
 
