@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import UserContext from "../context/userContext";
 import { getAllEvents } from "../api";
 import { Link } from "react-router-dom";
 import styles from "../styles/Events.module.css";
 
 export const Events = () => {
+  const { user } = useContext(UserContext);
+
   const [events, setEvents] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -52,11 +55,13 @@ export const Events = () => {
               Enjoy FREE social events, webinars and fun days out without the
               cost.
             </h2>
-            <div className={styles.hero__buttonContainer}>
-              <Link className={styles.hero__button} to="/signup">
-                Join EventFree
-              </Link>
-            </div>
+            {!user && (
+              <div className={styles.hero__buttonContainer}>
+                <Link className={styles.hero__button} to="/signup">
+                  Join EventFree
+                </Link>
+              </div>
+            )}
           </div>
         </div>
 
@@ -82,9 +87,7 @@ export const Events = () => {
                       className={styles.eventCard__image}
                     />
                     <div className={styles.eventCard__textContainer}>
-                      <p className={styles.topicText}>
-                        <strong>{topic}</strong>
-                      </p>
+                      <p className={styles.topicText}>{topic}</p>
                       <h3 className={styles.eventCard__title}>{title} </h3>
                       <p>
                         {Intl.DateTimeFormat("en-GB", dateOptions).format(
