@@ -1,18 +1,13 @@
-/* .active {
-  background-color: red;
-  color: blue;
-} */
-
 .navbar {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 40px;
+  /* margin-top: 40px; */
   z-index: 2;
-  /* margin: 0 10%; */
-  padding: 0 10%;
-  background-color: lightgray;
+  margin: 18px 10%;
+  /* margin-bottom: 30px; */
+  /* background-color: lightgray; */
 }
 
 .body {
@@ -24,7 +19,6 @@
 .title {
   font-size: 26px;
   font-weight: 700;
-  letter-spacing: 1px;
   text-decoration: none;
   transition: 0.2s;
 }
@@ -46,12 +40,12 @@
   align-items: center;
   gap: 46px;
   list-style: none;
+  margin: 0
 }
 
 .menuItems a {
   font-size: 18px;
   font-weight: 500;
-  letter-spacing: 0.5px;
   text-decoration: none;
   transition: 0.2s;
 }
@@ -60,43 +54,29 @@
 color: dodgerblue;
 }
 
-/* button {
-  background-color: dodgerblue;
-  font-family: inherit;
-  font-weight: 500;
-  font-size: 16px;
-  border: 0;
-  color: #fff;
-  padding: 10px;
-  border-radius: 4px;
-  cursor: pointer;
-} */
-
 @media screen and (max-width: 830px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-    padding: 3% 5%;
+    margin: 18px 5%;
   }
 
   .title {
     font-size: 21px;
   }
 
-  .menu {
-    position: absolute;
-    right: 0;
-    top: 6px;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 0 4%;
-    gap: 2px;
-  }
-
   .menuBtn {
     display: block;
     cursor: pointer;
-    width: 36px;
+    width: 26px;
+  }
+
+  .menu {
+    position: absolute;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
   }
 
   .menuItems {
@@ -105,9 +85,10 @@ color: dodgerblue;
     align-items: center;
     gap: 14px;
     border-radius: 10px;
-    background: lightgray;
+    background: #F1F1F1;
     padding: 24px 36px;
-    /* box-shadow: 0 0 6px rgba(0, 0, 0, 0.5); */
+    margin: 14px 0;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
   }
 
   .menuOpen {

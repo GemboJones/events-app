@@ -43,17 +43,17 @@ export const Navbar = () => {
                     setUser("");
                   }}
                 >
-                  Logout
+                  Log out
                 </NavLink>
               </li>
             </>
           ) : (
             <>
               <li>
-                <NavLink to="/login">Login</NavLink>
+                <NavLink to="/login">Log in</NavLink>
               </li>
               <li>
-                <NavLink to="/signup">Signup</NavLink>
+                <NavLink to="/signup">Sign up</NavLink>
               </li>
             </>
           )}
