@@ -20,8 +20,8 @@ select {
 }
 
 button {
-  margin-top: 10px;
-  background-color: dodgerblue;
+  margin-top: 14px;
+  background-color: #4A5BE5;
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
@@ -31,19 +31,21 @@ button {
   padding: 12px 16px;
   border-radius: 4px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 button:hover {
-  background-color: rgb(56, 155, 255);
+  background-color: #1C2EDE;
 }
 
 .underlined {
   font-weight: 700;
-  color: dodgerblue;
+  color: #4A5BE5;
+  transition: 0.3s;
 }
 
 .underlined:hover {
-  color: rgb(56, 155, 255);
+  color: #1C2EDE;
   text-decoration: underline;
 }
 
