@@ -3,28 +3,30 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* margin-top: 40px; */
   z-index: 2;
   margin: 18px 10%;
-  /* margin-bottom: 30px; */
-  /* background-color: lightgray; */
 }
 
 .body {
   border: none;
   margin: 0;
   padding: 0;
-
+}
+.title__container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.title__icon {
+  width: 26px;
+  height: 26px;
 }
 .title {
   font-size: 26px;
   font-weight: 700;
+  color: #4a5be5;
   text-decoration: none;
-  transition: 0.2s;
-}
-
-.title:hover {
-  color: dodgerblue;
+  font-family: "Poppins", sans-serif;
 }
 
 .menuBtn {
@@ -40,18 +42,18 @@
   align-items: center;
   gap: 46px;
   list-style: none;
-  margin: 0
+  margin: 0;
 }
 
 .menuItems a {
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
   text-decoration: none;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
 .menuItems a:hover {
-color: dodgerblue;
+  color: #4a5be5;
 }
 
 @media screen and (max-width: 830px) {
@@ -62,7 +64,7 @@ color: dodgerblue;
   }
 
   .title {
-    font-size: 21px;
+    font-size: 22px;
   }
 
   .menuBtn {
@@ -85,7 +87,7 @@ color: dodgerblue;
     align-items: center;
     gap: 14px;
     border-radius: 10px;
-    background: #F1F1F1;
+    background: #f1f1f1;
     padding: 24px 36px;
     margin: 14px 0;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);

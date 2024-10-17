@@ -4,6 +4,7 @@ import UserContext from "../context/userContext";
 import styles from "../styles/Navbar.module.css";
 import closeIcon from "../assets/closeIcon.png";
 import menuIcon from "../assets/menuIcon.png";
+import confetti from "../assets/confetti.png";
 
 export const Navbar = () => {
   const { user, setUser } = useContext(UserContext);
@@ -12,9 +13,12 @@ export const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <Link to="/" className={styles.title}>
-        😃 EventFree
-      </Link>
+      <div className={styles.title__container}>
+        <img className={styles.title__icon} src={confetti} />
+        <Link to="/" className={styles.title}>
+          EventFree
+        </Link>
+      </div>
       <div className={styles.menu}>
         <img
           className={styles.menuBtn}
