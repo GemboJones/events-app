@@ -53,7 +53,7 @@ export const SingleEvent = () => {
       <div className={styles.eventImage__container}>
         <img className={styles.eventImage} src={singleEvent.image} alt="" />
       </div>
-      <h4 className={styles.topicText}>{singleEvent.topic}</h4>
+      <p className={styles.topicText}>{singleEvent.topic}</p>
       <h1 className={styles.singleEvent__title}>{singleEvent.title}</h1>
       <p>
         <strong>Date</strong> <br />

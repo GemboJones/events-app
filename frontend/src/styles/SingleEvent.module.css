@@ -6,7 +6,7 @@
   text-align: center;
   font-weight: 600;
   font-size: 18px;
-  color: dodgerblue;
+  color: #4a5be5;
   padding: 4% 15%;
 }
 
@@ -31,17 +31,23 @@ ul {
 }
 
 .topicText {
-  font-size: 14px;
+  font-size: 16px;
   color: slategray;
+  font-weight: 500px;
+}
+
+.singleEvent__title {
+  font-size: 24px;
 }
 
 .underlined {
   font-weight: 700;
-  color: dodgerblue;
+  color: #4A5BE5;
+  transition: 0.3s;
 }
 
 .underlined:hover {
-  color: rgb(56, 155, 255);
+  color: #1C2EDE;
   text-decoration: underline;
 }
 
@@ -50,11 +56,4 @@ ul {
     padding: 3% 5%;
   }
 
-  .topicText {
-    font-size: 16px;
-  }
-
-  .singleEvent__title {
-    font-size: 24px;
-  }
 }
