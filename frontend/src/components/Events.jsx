@@ -22,16 +22,13 @@ export const Events = () => {
     return (
       <div className={styles.isLoading}>
         <p>Loading...</p>
-        {/* <p className={styles.isLoading2}>
-          Bear with. Free server slow to wake 😴
-        </p> */}
       </div>
     );
 
   const dateOptions = {
     day: "numeric",
-    month: "long",
-    weekday: "short",
+    month: "short",
+    weekday: "long",
     hour: "numeric",
     minute: "numeric",
     timeZone: "Europe/London",
@@ -53,7 +50,7 @@ export const Events = () => {
             <h1 className={styles.hero__heading}>Explore events</h1>
             <h2 className={styles.hero__subHeading}>
               Enjoy FREE social events, webinars and fun days out without the
-              cost.
+              cost
             </h2>
             {!user && (
               <div className={styles.hero__buttonContainer}>
@@ -87,14 +84,14 @@ export const Events = () => {
                       className={styles.eventCard__image}
                     />
                     <div className={styles.eventCard__textContainer}>
-                      <p className={styles.topicText}>{topic}</p>
+                      <p className={styles.eventCard__topicText}>{topic}</p>
                       <h3 className={styles.eventCard__title}>{title} </h3>
-                      <p>
+                      <p className={styles.eventCard__body}>
                         {Intl.DateTimeFormat("en-GB", dateOptions).format(
                           Date.parse(startDate)
                         )}
                       </p>
-                      <p>📍 {location}</p>
+                      <p className={styles.eventCard__body}>📍 {location}</p>
                     </div>
                   </li>
                 </Link>
