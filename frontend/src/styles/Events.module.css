@@ -136,7 +136,14 @@
     margin: 1rem 0;
   }
 
+    .eventCard__topicText {
+  font-size: 16px;
+}
   .eventCard__title {
     font-size: 20px;
   }
+
+  .eventCard__body {
+  font-size: 16px;
+}
 }
