@@ -16,19 +16,16 @@
   display: flex;
   align-items: center;
   gap: 8px;
-}
-.title__icon {
-  width: 28px;
-  height: 28px;
-}
-.title {
   font-size: 26px;
   font-weight: 700;
   color: #4a5be5;
   text-decoration: none;
   font-family: "Poppins", sans-serif;
 }
-
+.title__icon {
+  width: 28px;
+  height: 28px;
+}
 .menuBtn {
   display: none;
 }
@@ -62,14 +59,14 @@
     align-items: flex-start;
     margin: 18px 5%;
   }
+  
+    .title__container {
+      font-size: 24px;
+    }
 
   .title__icon {
     width: 26px;
     height: 26px;
-  }
-
-  .title {
-    font-size: 24px;
   }
 
   .menuBtn {

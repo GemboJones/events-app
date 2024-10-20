@@ -13,12 +13,12 @@ export const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <div className={styles.title__container}>
-        <img className={styles.title__icon} src={confetti} />
-        <Link to="/" className={styles.title}>
+      <Link to="/">
+        <div className={styles.title__container}>
+          <img className={styles.title__icon} src={confetti} />
           EventFree
-        </Link>
-      </div>
+        </div>
+      </Link>
       <div className={styles.menu}>
         <img
           className={styles.menuBtn}
