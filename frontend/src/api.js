@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://events-app-api-nlkr.onrender.com/api";
+const BASE_URL = import.meta.env.VITE_BE_API;
 
 export const getAllEvents = () => {
    return axios.get(`${BASE_URL}/events`).then((response) => {
