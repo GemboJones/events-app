@@ -6,7 +6,7 @@
   text-align: center;
   font-weight: 600;
   font-size: 18px;
-  color: #4a5be5;
+  color: slategray;
   padding: 4% 15%;
 }
 
@@ -32,7 +32,7 @@ ul {
 
 .topicText {
   font-size: 16px;
-  color: slategray;
+  color: #4A5BE5;
   font-weight: 500px;
 }
 

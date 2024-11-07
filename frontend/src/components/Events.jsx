@@ -78,11 +78,13 @@ export const Events = () => {
               return (
                 <Link to={`/events/${_id}`} key={_id}>
                   <li className={styles.eventCard}>
-                    <img
-                      src={image}
-                      alt=""
-                      className={styles.eventCard__image}
-                    />
+                    <div className={styles.eventCard__imageContainer}>
+                      <img
+                        src={image}
+                        alt=""
+                        className={styles.eventCard__image}
+                      />
+                    </div>
                     <div className={styles.eventCard__textContainer}>
                       <p className={styles.eventCard__topicText}>{topic}</p>
                       <h3 className={styles.eventCard__title}>{title} </h3>
