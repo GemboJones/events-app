@@ -38,7 +38,7 @@ export const MyEvents = () => {
   return (
     <>
       <div className={styles.container}>
-        <h1>My Events</h1>
+        <h1 className={styles.myEvents__heading}>My Events</h1>
         {myEvents.length === 0 ? (
           <p>
             No events booked.{" "}

@@ -78,6 +78,7 @@
   padding: 0rem;
   display: grid;
   column-gap: 40px;
+  row-gap: 4rem;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 .eventCard {
@@ -85,7 +86,7 @@
   border: 2px solid;
   border-radius: 10px;
   border-color: rgb(225, 226, 230);
-  margin: 2rem 0;
+  /* margin: 2rem 0; */
   transition: 0.3s;
 }
 .eventCard:hover {
@@ -118,10 +119,14 @@
   font-size: 14px;
   font-weight: 600;
 }
+/* My Events */
 .underlined {
   font-weight: 700;
   color: #4A5BE5;
   transition: 0.3s;
+}
+.myEvents__heading {
+  margin: 1.5rem 0;
 }
 
 @media screen and (max-width: 830px) {
@@ -137,9 +142,11 @@
   .hero__button {
     width: 100%;
   }
-
+.eventsGrid {
+  row-gap: 2rem;
+}
   .eventCard {
-    margin: 1rem 0;
+    /* margin: 1rem 0; */
   }
 
     .eventCard__topicText {
