@@ -79,7 +79,7 @@ export const CreateEvent = () => {
         <label>Image:</label>
         <input
           type="text"
-          placeholder="Add image URL link. Try www.unsplash.com"
+          placeholder="Add image URL link"
           onChange={(e) => setImage(e.target.value)}
           value={image}
         />
