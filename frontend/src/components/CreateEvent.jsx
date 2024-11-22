@@ -95,7 +95,7 @@ export const CreateEvent = () => {
         <label>Topic:</label>
         <input
           type="text"
-          placeholder="Add event topic e.g. Technology or Health"
+          placeholder="Add event topic e.g. Music or Technology"
           onChange={(e) => setTopic(e.target.value)}
           value={topic}
         />
